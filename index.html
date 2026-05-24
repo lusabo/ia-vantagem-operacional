@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- ─── Consent Mode v2 — deve rodar antes do GTM ─── -->
+  <script>
+    globalThis.dataLayer = globalThis.dataLayer || [];
+    globalThis.gtag = function () { dataLayer.push(arguments); };
+    gtag('consent', 'default', {
+      analytics_storage:    'denied',
+      ad_storage:           'denied',
+      ad_user_data:         'denied',
+      ad_personalization:   'denied',
+      wait_for_update:      500
+    });
+  </script>
   <!-- Google Tag Manager -->
   <script>
     (function (w, d, s, l, i) {
@@ -264,6 +276,45 @@
       box-shadow: 0 0 16px rgba(0,196,212,0.35);
     }
 
+    /* ─── AUTHORITY STRIP ─── */
+    #authority-strip { padding: 0 0 24px; }
+    .auth-strip {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 22px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)), var(--card);
+    }
+    .auth-strip-photo {
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+    }
+    .auth-strip-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .auth-strip-info { flex: 1; min-width: 0; }
+    .auth-strip-name { font-size: 14px; color: var(--white); margin: 0; }
+    .auth-strip-name strong { font-weight: 600; }
+    .auth-strip-role { font-size: 13px; color: var(--light); margin: 4px 0 0; line-height: 1.5; }
+    .auth-strip-link {
+      font-size: 13px;
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 500;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .auth-strip-link:hover { color: var(--blue); }
+
+    @media (max-width: 880px) {
+      .auth-strip { flex-wrap: wrap; border-radius: 18px; padding: 16px; }
+      .auth-strip-link { width: 100%; text-align: left; }
+    }
+
     /* ─── PROOF ─── */
     #proof { padding: 56px 0 88px; }
     .proof-shell {
@@ -411,6 +462,7 @@
       color: var(--muted);
       line-height: 1.8;
     }
+    .about-text + .about-text { margin-top: 16px; }
     .about-role {
       font-size: 13px;
       color: var(--cyan);
@@ -462,6 +514,11 @@
     .pillar.po:hover { border-color: var(--yellow); }
     .pillar-name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
     .pillar-desc { font-size: 13px; color: var(--muted); }
+    .pillar.pm .pillar-name { color: var(--blue); }
+    .pillar.pa .pillar-name { color: var(--cyan); }
+    .pillar.pc .pillar-name { color: var(--green); }
+    .pillar.pr .pillar-name { color: var(--orange); }
+    .pillar.po .pillar-name { color: var(--yellow); }
 
     /* ─── TRANSFORMATION ─── */
     #transform {
@@ -596,6 +653,14 @@
     }
     .journey-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
     .journey-output { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .journey-card.phase-1 { border-left: 3px solid var(--blue); }
+    .journey-card.phase-2 { border-left: 3px solid var(--cyan); }
+    .journey-card.phase-3 { border-left: 3px solid var(--green); }
+    .journey-card.phase-4 { border-left: 3px solid var(--orange); }
+    .journey-card.phase-1 .journey-num { color: var(--blue); }
+    .journey-card.phase-2 .journey-num { color: var(--cyan); }
+    .journey-card.phase-3 .journey-num { color: var(--green); }
+    .journey-card.phase-4 .journey-num { color: var(--orange); }
 
     /* ─── FOR WHOM ─── */
     #audience { padding: 80px 0; }
@@ -815,6 +880,10 @@
       .why-grid { grid-template-columns: 1fr; }
       .journey-grid { grid-template-columns: repeat(2, 1fr); }
       .audience-layout { grid-template-columns: 1fr; gap: 40px; }
+      #pain, #method, #transform, #deliverables, #faq, #lead, #journey { padding: 64px 0; }
+      #about, #why-one, #audience { padding: 56px 0; }
+      #proof { padding: 32px 0 56px; }
+      .pain-header, .transform-header, .why-header, .faq-header, .journey-header { margin-bottom: 40px; }
       .mobile-sticky-cta {
         display: inline-flex;
         align-items: center;
@@ -878,6 +947,65 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* ─── FOCUS VISIBLE ─── */
+    .btn-primary:focus-visible,
+    .btn-secondary:focus-visible,
+    .btn-nav:focus-visible,
+    .btn-consent-accept:focus-visible,
+    .btn-consent-reject:focus-visible,
+    .form-submit:focus-visible,
+    summary:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+    /* ─── LAYOUT HELPERS ─── */
+    .section-center { text-align: center; margin-bottom: 52px; }
+    .section-center .section-sub { margin: 0 auto; }
+    .mb-section { margin-bottom: 52px; }
+    .transform-cta { text-align: center; margin-top: 60px; }
+    .transform-cta-text { font-size: 16px; color: var(--light); margin-bottom: 24px; }
+
+    /* ─── CONSENT BANNER ─── */
+    #consent-banner {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 200;
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.45);
+    }
+    #consent-banner.hidden { display: none; }
+    .consent-text {
+      flex: 1;
+      min-width: 240px;
+      font-size: 13px;
+      color: var(--light);
+      line-height: 1.6;
+    }
+    .consent-text a { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }
+    .consent-actions { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+    .btn-consent-accept {
+      display: inline-flex; align-items: center;
+      background: var(--grad); color: var(--black);
+      font-weight: 700; font-size: 13px;
+      padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer;
+      transition: opacity .2s;
+    }
+    .btn-consent-accept:hover { opacity: .88; }
+    .btn-consent-reject {
+      display: inline-flex; align-items: center;
+      background: transparent; color: var(--muted);
+      font-size: 13px; font-weight: 600;
+      padding: 10px 16px; border-radius: 8px;
+      border: 1px solid var(--border); cursor: pointer;
+      transition: color .2s, border-color .2s;
+    }
+    .btn-consent-reject:hover { color: var(--white); border-color: var(--muted); }
+    body.consent-pending .mobile-sticky-cta { display: none !important; }
   </style>
 </head>
 <body>
@@ -886,6 +1014,20 @@
 src="https://www.googletagmanager.com/ns.html?id=GTM-WP7DNHHG"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
+<!-- ═══════════ CONSENT BANNER ═══════════ -->
+<div id="consent-banner" role="dialog" aria-label="Preferências de privacidade" aria-live="polite">
+  <p class="consent-text">
+    Esta página usa cookies analíticos (Google Analytics 4) para medir desempenho e origem do tráfego.
+    Se estiver na União Europeia — incluindo Portugal —, é necessária a sua autorização prévia.
+    <a href="privacidade.html">Política de Privacidade</a>
+  </p>
+  <div class="consent-actions">
+    <button class="btn-consent-accept" id="consent-accept">Aceitar análise</button>
+    <button class="btn-consent-reject" id="consent-reject">Recusar</button>
+  </div>
+</div>
+
 <!-- ═══════════ NAV ═══════════ -->
 <nav>
   <div class="nav-inner">
@@ -895,7 +1037,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#method" class="nav-link">O Método</a>
       <a href="#faq" class="nav-link">FAQ</a>
     </div>
-    <a href="#lead" class="btn-nav">Agendar diagnóstico</a>
+    <a href="#lead" class="btn-nav">Falar com o Luciano</a>
   </div>
 </nav>
 
@@ -911,16 +1053,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           em vantagem operacional real.
         </h1>
         <p class="hero-sub">
-          Mentoria prática para POs, PMs, Product Ops, Scrum Masters e lideranças que já usam IA,
-          mas ainda não conseguem aplicá-la com método, contexto, regência humana e métricas em um fluxo real de trabalho.
+          Em 4 semanas, com método, contexto e métricas, você aplica IA no seu próprio fluxo de trabalho — e sai com um Blueprint pronto para virar piloto.
         </p>
-        <div class="hero-support">
-          <span class="hero-support-mark"></span>
-          <p><strong>Em 4 semanas</strong>, você sai com um Blueprint Agentic MACRO, um mini ecossistema testável e um plano de piloto aplicado ao seu próprio contexto.</p>
-        </div>
         <div class="hero-cta-row">
-          <a href="#lead" class="btn-primary">Agendar diagnóstico estratégico</a>
-          <a href="#method" class="btn-secondary">Ver o método</a>
+          <a href="#lead" class="btn-primary">Conversar 45 min sobre meu caso</a>
+          <a href="macro.pdf" class="btn-secondary" download>↓ Baixar o e-book do Método MACRO</a>
         </div>
         <p class="exclusivity-line">
           <span class="exclusivity-dot">●</span>
@@ -945,6 +1082,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="hero-image-bg"></div>
         <img src="capa.png" alt="Mentoria Agentic MACRO — Transformando IA em Vantagem Operacional" class="hero-image" />
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ AUTHORITY STRIP ═══════════ -->
+<section id="authority-strip">
+  <div class="container">
+    <div class="auth-strip reveal">
+      <div class="auth-strip-photo">
+        <img src="foto.png" alt="Luciano Santos Borges" loading="lazy" />
+      </div>
+      <div class="auth-strip-info">
+        <p class="auth-strip-name">Mentoria conduzida por <strong>Luciano Santos Borges</strong></p>
+        <p class="auth-strip-role">20+ anos em tech · Product Owner · Especialização em IA · Criador do Método MACRO</p>
+      </div>
+      <a href="#about" class="auth-strip-link">Conhecer o Luciano →</a>
     </div>
   </div>
 </section>
@@ -1037,7 +1190,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="reveal">
         <div class="about-photo-frame">
-          <img src="foto.png" alt="Luciano Santos Borges" class="about-photo" />
+          <img src="foto.png" alt="Luciano Santos Borges" class="about-photo" loading="lazy" />
         </div>
         <div class="about-creds">
           <span class="about-cred">20+ anos em tech</span>
@@ -1061,7 +1214,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Scrum Master, Professor Universitário e hoje Product Owner no setor de tecnologia —, desenvolvi uma visão
           direta sobre a transformação digital atual.
         </p>
-        <p class="about-text" style="margin-top:16px;">
+        <p class="about-text">
           No cenário onde times geram código, protótipos e análises em velocidade recorde, o verdadeiro diferencial
           não é automatizar — é saber o que e como validar. Minha missão é ajudar profissionais e times de Produto
           e Engenharia a usar IA como vantagem operacional real: mais produtividade, discovery mais rápido e entrega
@@ -1090,42 +1243,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="pillar pm reveal">
             <span class="pillar-letter m">M</span>
             <div>
-              <div class="pillar-name" style="color:var(--blue)">Mapeamento</div>
+              <div class="pillar-name">Mapeamento</div>
               <div class="pillar-desc">Identifica desperdícios reais no fluxo antes de qualquer ferramenta. Não começa por IA — começa por onde o trabalho perde inteligência, tempo ou qualidade.</div>
             </div>
           </div>
           <div class="pillar pa reveal">
             <span class="pillar-letter a">A</span>
             <div>
-              <div class="pillar-name" style="color:var(--cyan)">Arquitetura</div>
+              <div class="pillar-name">Arquitetura</div>
               <div class="pillar-desc">Escolhe a menor solução capaz de resolver o problema com confiança. Checklist? Template? Workflow? Agente? Multiagente? A maturidade certa para cada caso.</div>
             </div>
           </div>
           <div class="pillar pc reveal">
             <span class="pillar-letter c">C</span>
             <div>
-              <div class="pillar-name" style="color:var(--green)">Contexto</div>
+              <div class="pillar-name">Contexto</div>
               <div class="pillar-desc">Prompt é porta de entrada. Contexto é infraestrutura. Transforma regras, exemplos e fontes em Context Pack operacional e RAG simulado reutilizável.</div>
             </div>
           </div>
           <div class="pillar pr reveal">
             <span class="pillar-letter r">R</span>
             <div>
-              <div class="pillar-name" style="color:var(--orange)">Regência</div>
+              <div class="pillar-name">Regência</div>
               <div class="pillar-desc">Define o que a IA pode sugerir, executar, bloquear ou escalar. Responsabilidade humana não desaparece quando a IA entra no fluxo.</div>
             </div>
           </div>
           <div class="pillar po reveal">
             <span class="pillar-letter o">O</span>
             <div>
-              <div class="pillar-name" style="color:var(--yellow)">Otimização</div>
+              <div class="pillar-name">Otimização</div>
               <div class="pillar-desc">Sem baseline, métrica e observabilidade, qualquer ganho de IA vira narrativa. O piloto precisa mostrar impacto, qualidade, custo e confiança.</div>
             </div>
           </div>
         </div>
       </div>
       <div class="reveal">
-        <img src="macro.png" alt="Método MACRO" class="method-image" />
+        <img src="macro.png" alt="Método MACRO" class="method-image" loading="lazy" />
       </div>
     </div>
   </div>
@@ -1162,9 +1315,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </tbody>
       </table>
     </div>
-    <div class="reveal" style="text-align:center; margin-top:60px;">
-      <p style="font-size:16px; color:var(--light); margin-bottom:24px;">Pronto para construir isso no seu fluxo real?</p>
-      <a href="#lead" class="btn-primary">Agendar diagnóstico estratégico</a>
+    <div class="reveal transform-cta">
+      <p class="transform-cta-text">Sua IA está acelerando o trabalho — mas o resultado ainda é difuso?</p>
+      <a href="#lead" class="btn-primary">Conversar 45 min sobre meu caso</a>
     </div>
   </div>
 </section>
@@ -1172,10 +1325,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ═══════════ DELIVERABLES ═══════════ -->
 <section id="deliverables">
   <div class="container">
-    <div class="reveal" style="text-align:center; margin-bottom:52px;">
+    <div class="reveal section-center">
       <span class="tag">O que você leva</span>
       <h2 class="section-title">O que você constrói ao longo da mentoria</h2>
-      <p class="section-sub" style="margin:0 auto;">
+      <p class="section-sub">
         Não é um curso de ferramenta. Cada bloco abaixo existe para transformar um caso real do seu trabalho em uma operação mais clara, governada e mensurável.
       </p>
     </div>
@@ -1270,23 +1423,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
     </div>
     <div class="journey-grid">
-      <div class="journey-card reveal">
+      <div class="journey-card phase-1 reveal">
         <div class="journey-num">Fase 01 · Encontros 1 e 2</div>
         <div class="journey-title">Diagnóstico e priorização da oportunidade</div>
         <div class="journey-output">Saída: fluxo real escolhido, desperdício mapeado e oportunidade de IA priorizada com critério.</div>
       </div>
-      <div class="journey-card reveal">
+      <div class="journey-card phase-2 reveal">
         <div class="journey-num">Fase 02 · Encontros 3 e 4</div>
         <div class="journey-title">Desenho da solução mínima</div>
         <div class="journey-output">Saída: arquitetura proporcional, prompt profissional e desenho do skill, workflow ou agente quando fizer sentido.</div>
       </div>
-      <div class="journey-card reveal">
+      <div class="journey-card phase-3 reveal">
         <div class="journey-num">Fase 03 · Encontros 5 e 6</div>
         <div class="journey-title">Contexto, regência e segurança operacional</div>
         <div class="journey-output">Saída: Context Pack, limites de autonomia, permissões, quality gates e mapa de oportunidades de integração.</div>
       </div>
-      <div class="journey-card reveal" style="border-color: rgba(0,149,229,0.3);">
-        <div class="journey-num" style="color:var(--blue)">Fase 04 · Encontros 7 e 8</div>
+      <div class="journey-card phase-4 reveal">
+        <div class="journey-num">Fase 04 · Encontros 7 e 8</div>
         <div class="journey-title">Teste, observabilidade e plano de piloto</div>
         <div class="journey-output">Saída: Blueprint final, mini ecossistema validado, scorecard e decisão clara para as próximas 2 a 4 semanas.</div>
       </div>
@@ -1297,7 +1450,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ═══════════ AUDIENCE ═══════════ -->
 <section id="audience">
   <div class="container">
-    <div class="reveal" style="margin-bottom:52px;">
+    <div class="reveal mb-section">
       <span class="tag">Para quem é</span>
       <h2 class="section-title">Essa mentoria é para você?</h2>
       <p class="section-sub">
@@ -1374,9 +1527,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="lead-inner">
       <div class="reveal">
         <span class="tag">Próximo passo</span>
-        <h2 class="section-title">Agende seu<br><span class="grad-text">diagnóstico estratégico</span></h2>
+        <h2 class="section-title">Uma conversa de 45 min<br>sobre <span class="grad-text">o seu caso</span></h2>
         <p class="section-sub">
-          Uma conversa de 45 minutos para entender onde IA já entra no seu trabalho, identificar o principal gargalo operacional e avaliar se faz sentido transformar isso em um piloto real.
+          O objetivo é entender onde IA já entra no seu trabalho, identificar o principal gargalo operacional e avaliar se faz sentido transformar isso em um piloto real.
         </p>
       </div>
       <div class="lead-decision-grid reveal">
@@ -1415,7 +1568,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
            style="min-width:320px; height:700px; border-radius:16px; overflow:hidden;"></div>
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       <!-- Calendly inline widget end -->
-      <p class="lead-privacy-note reveal">Ao agendar, você compartilha seus dados com Luciano Santos Borges e com o Calendly para viabilizar a marcação, o contato posterior e a avaliação de aderência da mentoria. A página também registra eventos mínimos de navegação, origem e interação por meio do Google Tag Manager e do Google Analytics 4 para entender o desempenho da captação. Leia a <a href="privacidade.html">Política de Privacidade</a>.</p>
+      <p class="lead-privacy-note reveal">Ao agendar, você compartilha seus dados com Luciano Santos Borges e com o Calendly para viabilizar a marcação, o contato posterior e a avaliação de aderência da mentoria. Esta página pode usar cookies analíticos (Google Analytics 4) para medir desempenho — somente se você autorizou nos cookies. Você pode alterar sua preferência a qualquer momento. Leia a <a href="privacidade.html">Política de Privacidade</a>.</p>
     </div>
   </div>
 </section>
@@ -1427,13 +1580,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="footer-text">Mentoria Agentic MACRO · Luciano Santos Borges</p>
     <p class="footer-text" style="margin-top:8px; font-size:11px;">Transformando IA em vantagem operacional.</p>
     <div class="footer-links">
-      <a href="macro.pdf" download>↓ Baixar o guia do Método MACRO (PDF)</a>
+      <a href="macro.pdf" download>↓ Baixar o e-book do Método MACRO (PDF)</a>
       <a href="privacidade.html">Política de Privacidade</a>
     </div>
   </div>
 </footer>
 
-<a href="#lead" class="mobile-sticky-cta">Agendar diagnóstico estratégico</a>
+<a href="#lead" class="mobile-sticky-cta">Conversar sobre meu caso</a>
 
 <script>
   /* ── Scroll reveal ── */
@@ -1447,6 +1600,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* ── Consent Management ── */
+  (function () {
+    var CONSENT_KEY = 'macro_consent_v1';
+    var banner = document.getElementById('consent-banner');
+    var stored = localStorage.getItem(CONSENT_KEY);
+
+    function applyConsent(granted) {
+      gtag('consent', 'update', {
+        analytics_storage: granted ? 'granted' : 'denied'
+      });
+      localStorage.setItem(CONSENT_KEY, granted ? 'granted' : 'denied');
+      if (banner) banner.classList.add('hidden');
+      document.body.classList.remove('consent-pending');
+    }
+
+    if (stored === 'granted') {
+      applyConsent(true);
+    } else if (stored === 'denied') {
+      if (banner) banner.classList.add('hidden');
+    } else {
+      document.body.classList.add('consent-pending');
+    }
+
+    if (banner) {
+      document.getElementById('consent-accept').addEventListener('click', function () { applyConsent(true); });
+      document.getElementById('consent-reject').addEventListener('click', function () { applyConsent(false); });
+    }
+  }());
 
   /* ── Analytics-ready event layer ── */
   globalThis.dataLayer = globalThis.dataLayer || [];
