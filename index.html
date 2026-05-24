@@ -232,6 +232,65 @@
     }
     .pain-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
+    /* ─── ABOUT ─── */
+    #about { padding: 100px 0; }
+    .about-layout {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-photo-frame {
+      position: relative;
+      border-radius: 18px;
+      padding: 2px;
+      background: var(--grad);
+    }
+    .about-photo {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+    }
+    .about-creds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .about-cred {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--light);
+      letter-spacing: 0.04em;
+    }
+    .about-quote {
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 700;
+      line-height: 1.45;
+      color: var(--white);
+      border-left: 3px solid var(--blue);
+      padding-left: 20px;
+      margin: 28px 0;
+      font-style: italic;
+    }
+    .about-text {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .about-role {
+      font-size: 13px;
+      color: var(--cyan);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+    }
+
     /* ─── METHOD ─── */
     #method { padding: 100px 0; }
     .method-layout {
@@ -500,6 +559,8 @@
     @media (max-width: 900px) {
       .hero-grid    { grid-template-columns: 1fr; }
       .hero-image-wrap { display: none; }
+      .about-layout { grid-template-columns: 1fr; gap: 48px; }
+      .about-photo-frame { max-width: 260px; }
       .method-layout { grid-template-columns: 1fr; gap: 48px; }
       .deliverables-grid { grid-template-columns: 1fr; }
       .journey-grid { grid-template-columns: repeat(2, 1fr); }
@@ -624,6 +685,49 @@
         <h3>Teatro de produtividade</h3>
         <p>Bonito no LinkedIn. Fraco no resultado. A IA virou uma camada sobre um processo ainda confuso e manual.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-layout">
+
+      <div class="reveal">
+        <div class="about-photo-frame">
+          <img src="foto.png" alt="Luciano Santos Borges" class="about-photo" />
+        </div>
+        <div class="about-creds">
+          <span class="about-cred">20+ anos em tech</span>
+          <span class="about-cred">Ciência da Computação</span>
+          <span class="about-cred">MBA USP</span>
+          <span class="about-cred">Especialização em IA</span>
+          <span class="about-cred">Lisboa, Portugal</span>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <span class="tag">Quem conduz a mentoria</span>
+        <h2 class="section-title">Luciano <span class="grad-text">Borges</span></h2>
+        <p class="about-role">Product Owner · Critical TechWorks · Lisboa</p>
+        <blockquote class="about-quote">
+          &ldquo;A IA não resolve um processo mal definido.<br>Ela apenas acelera os seus efeitos.&rdquo;
+        </blockquote>
+        <p class="about-text">
+          Trabalho na interseção onde Produto, Engenharia de Software, Agilidade e Inteligência Artificial se encontram.
+          Com mais de 20 anos de trajetória em tecnologia — como Engenheiro de Software e Arquiteto de Soluções
+          (incluindo o Documento Nacional de Identidade), Scrum Master, Professor Universitário e hoje Product Owner
+          na Critical TechWorks em Lisboa —, desenvolvi uma visão direta sobre a transformação digital atual.
+        </p>
+        <p class="about-text" style="margin-top:16px;">
+          No cenário onde times geram código, protótipos e análises em velocidade recorde, o verdadeiro diferencial
+          não é automatizar — é saber o que e como validar. Minha missão é ajudar profissionais e times de Produto
+          e Engenharia a usar IA como vantagem operacional real: mais produtividade, discovery mais rápido e entrega
+          mais previsível, sem abrir mão de governança, clareza de problema e qualidade técnica.
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
