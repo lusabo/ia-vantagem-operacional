@@ -4,6 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mentoria Agentic MACRO — Transforme IA em Vantagem Operacional</title>
+
+  <!-- ─── Open Graph / Social Sharing ─── -->
+  <meta property="og:type"         content="website" />
+  <meta property="og:url"          content="https://lusabo.github.io/ia-vantagem-operacional/" />
+  <meta property="og:title"        content="Mentoria Agentic MACRO — Transforme IA em Vantagem Operacional" />
+  <meta property="og:description"  content="Aprenda a transformar IA em vantagem operacional real com o Método MACRO. 8 encontros, 4 semanas, 1 Blueprint aplicado ao seu fluxo de trabalho." />
+  <meta property="og:image"        content="https://lusabo.github.io/ia-vantagem-operacional/capa.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale"       content="pt_BR" />
+  <!-- Twitter Card (lido também pelo LinkedIn) -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Mentoria Agentic MACRO — Transforme IA em Vantagem Operacional" />
+  <meta name="twitter:description" content="Aprenda a transformar IA em vantagem operacional real com o Método MACRO. 8 encontros, 4 semanas, 1 Blueprint aplicado ao seu fluxo de trabalho." />
+  <meta name="twitter:image"       content="https://lusabo.github.io/ia-vantagem-operacional/capa.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -15,7 +31,7 @@
       --dark:    #111111;
       --card:    #161616;
       --border:  #242424;
-      --muted:   #666666;
+      --muted:   #888888;
       --light:   #999999;
       --white:   #ffffff;
       --blue:    #0095E5;
@@ -92,9 +108,13 @@
       max-width: 1100px; margin: 0 auto; padding: 0 24px;
       height: 64px;
       display: flex; align-items: center; justify-content: space-between;
+      gap: 24px;
     }
     .nav-logo { height: 36px; width: auto; }
     .btn-nav {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background: var(--grad);
       color: var(--black);
       font-weight: 700;
@@ -107,6 +127,9 @@
       letter-spacing: 0.02em;
     }
     .btn-nav:hover { opacity: .88; transform: translateY(-1px); }
+    .nav-links { display: flex; gap: 32px; align-items: center; flex: 1; justify-content: center; }
+    .nav-link { font-size: 13px; font-weight: 500; color: var(--light); transition: color .2s; letter-spacing: 0.02em; }
+    .nav-link:hover { color: var(--white); }
 
     /* ─── HERO ─── */
     #hero {
@@ -146,11 +169,14 @@
       font-size: clamp(16px, 2vw, 19px);
       color: var(--light);
       line-height: 1.7;
-      margin-bottom: 36px;
+      margin-bottom: 22px;
       max-width: 520px;
     }
     .hero-cta-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
     .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background: var(--grad);
       color: var(--black);
       font-weight: 800;
@@ -164,6 +190,9 @@
     }
     .btn-primary:hover { opacity: .88; transform: translateY(-2px); }
     .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background: transparent;
       color: var(--light);
       font-weight: 600;
@@ -191,11 +220,92 @@
       z-index: 1;
     }
     .hero-stats {
-      display: flex; gap: 32px; margin-top: 44px; flex-wrap: wrap;
+      display: flex; gap: 0; margin-top: 44px; flex-wrap: wrap;
     }
-    .stat-item { display: flex; flex-direction: column; gap: 2px; }
-    .stat-num { font-size: 28px; font-weight: 800; }
-    .stat-label { font-size: 12px; color: var(--muted); letter-spacing: 0.05em; }
+    .stat-item { display: flex; flex-direction: column; gap: 4px; padding: 0 28px; }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item + .stat-item { border-left: 1px solid var(--border); }
+    .stat-num { font-size: 38px; font-weight: 800; }
+    .stat-label { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+    .hero-support {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      max-width: 560px;
+      margin-bottom: 34px;
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.02);
+    }
+    .hero-support strong { color: var(--white); }
+    .hero-support p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    .hero-support-mark {
+      width: 10px;
+      height: 10px;
+      margin-top: 7px;
+      border-radius: 999px;
+      flex-shrink: 0;
+      background: var(--cyan);
+      box-shadow: 0 0 16px rgba(0,196,212,0.35);
+    }
+
+    /* ─── PROOF ─── */
+    #proof { padding: 56px 0 88px; }
+    .proof-shell {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 34px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%),
+        var(--card);
+    }
+    .proof-head {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 32px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+    .proof-note {
+      font-size: 14px;
+      color: var(--light);
+      line-height: 1.7;
+      padding: 20px 22px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.02);
+    }
+    .proof-note strong { color: var(--white); }
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .proof-card {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .proof-kicker {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 12px;
+    }
+    .proof-card h3 {
+      font-size: 18px;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .proof-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
 
     /* ─── PAIN ─── */
     #pain {
@@ -233,7 +343,12 @@
     .pain-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
     /* ─── ABOUT ─── */
-    #about { padding: 100px 0; }
+    #about {
+      padding: 80px 0;
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
     .about-layout {
       display: grid;
       grid-template-columns: 300px 1fr;
@@ -326,11 +441,11 @@
     .pillar-letter.c { color: var(--green); }
     .pillar-letter.r { color: var(--orange); }
     .pillar-letter.o { color: var(--yellow); }
-    .pillar:hover.pm { border-color: var(--blue); }
-    .pillar:hover.pa { border-color: var(--cyan); }
-    .pillar:hover.pc { border-color: var(--green); }
-    .pillar:hover.pr { border-color: var(--orange); }
-    .pillar:hover.po { border-color: var(--yellow); }
+    .pillar.pm:hover { border-color: var(--blue); }
+    .pillar.pa:hover { border-color: var(--cyan); }
+    .pillar.pc:hover { border-color: var(--green); }
+    .pillar.pr:hover { border-color: var(--orange); }
+    .pillar.po:hover { border-color: var(--yellow); }
     .pillar-name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
     .pillar-desc { font-size: 13px; color: var(--muted); }
 
@@ -382,10 +497,14 @@
       transition: border-color .2s, transform .2s;
     }
     .del-card:hover { transform: translateY(-4px); }
-    .del-card.blue  { border-top: 3px solid var(--blue);   }
-    .del-card.cyan  { border-top: 3px solid var(--cyan);   }
-    .del-card.green { border-top: 3px solid var(--green);  }
-    .del-card.orange{ border-top: 3px solid var(--orange); }
+    .del-card.blue   { border-top: 3px solid var(--blue);   }
+    .del-card.cyan   { border-top: 3px solid var(--cyan);   }
+    .del-card.green  { border-top: 3px solid var(--green);  }
+    .del-card.orange { border-top: 3px solid var(--orange); }
+    .del-card.blue:hover   { border-color: var(--blue);   }
+    .del-card.cyan:hover   { border-color: var(--cyan);   }
+    .del-card.green:hover  { border-color: var(--green);  }
+    .del-card.orange:hover { border-color: var(--orange); }
     .del-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
     .del-card p  { font-size: 14px; color: var(--muted); margin-bottom: 18px; line-height: 1.6; }
     .del-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
@@ -395,6 +514,45 @@
     .del-card.cyan  .del-list li::before { color: var(--cyan); }
     .del-card.green .del-list li::before { color: var(--green); }
     .del-card.orange .del-list li::before { color: var(--orange); }
+
+    /* ─── WHY 1:1 ─── */
+    #why-one {
+      padding: 80px 0;
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .why-header { text-align: center; margin-bottom: 52px; }
+    .why-header .section-sub { margin: 0 auto; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .why-card {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+    }
+    .why-card h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .why-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .why-close {
+      text-align: center;
+      color: var(--light);
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 760px;
+      margin: 28px auto 0;
+    }
 
     /* ─── JOURNEY ─── */
     #journey {
@@ -423,10 +581,10 @@
       text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
     }
     .journey-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
-    .journey-output { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .journey-output { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
     /* ─── FOR WHOM ─── */
-    #audience { padding: 100px 0; }
+    #audience { padding: 80px 0; }
     .audience-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -450,7 +608,7 @@
       border-bottom: 1px solid var(--border);
     }
     .faq-header { text-align: center; margin-bottom: 60px; }
-    .faq-grid { display: flex; flex-direction: column; gap: 2px; max-width: 760px; margin: 0 auto; }
+    .faq-grid { display: flex; flex-direction: column; gap: 8px; max-width: 760px; margin: 0 auto; }
     details {
       background: var(--black);
       border: 1px solid var(--border);
@@ -499,6 +657,61 @@
     }
     .lead-inner .section-title { margin-bottom: 14px; }
     .lead-inner .section-sub  { margin: 0 auto 40px; }
+    .lead-decision-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 0 0 34px;
+      text-align: left;
+    }
+    .lead-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .lead-card h3 {
+      font-size: 15px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .lead-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .lead-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .lead-list li {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .lead-list li::before {
+      content: "•";
+      color: var(--cyan);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .lead-privacy-note {
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 18px auto 0;
+      line-height: 1.6;
+    }
+    .lead-privacy-note a {
+      color: var(--white);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
     .form-wrap {
       background: var(--card);
       border: 1px solid var(--border);
@@ -554,24 +767,91 @@
     }
     .footer-logo { height: 28px; margin: 0 auto 16px; }
     .footer-text { font-size: 13px; color: var(--muted); }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .footer-links a {
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color .2s;
+    }
+    .footer-links a:hover,
+    .footer-links a:focus { color: var(--white); }
+    .mobile-sticky-cta { display: none; }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       .hero-grid    { grid-template-columns: 1fr; }
       .hero-image-wrap { display: none; }
+      .nav-links { display: none; }
+      .proof-head { grid-template-columns: 1fr; }
+      .proof-grid { grid-template-columns: 1fr; }
       .about-layout { grid-template-columns: 1fr; gap: 48px; }
       .about-photo-frame { max-width: 260px; }
       .method-layout { grid-template-columns: 1fr; gap: 48px; }
       .deliverables-grid { grid-template-columns: 1fr; }
+      .lead-decision-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
       .journey-grid { grid-template-columns: repeat(2, 1fr); }
       .audience-layout { grid-template-columns: 1fr; gap: 40px; }
+      .mobile-sticky-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        z-index: 120;
+        padding: 14px 18px;
+        border-radius: 12px;
+        background: var(--grad);
+        color: var(--black);
+        font-size: 14px;
+        font-weight: 800;
+        box-shadow: 0 14px 34px rgba(0,0,0,0.35);
+      }
     }
     @media (max-width: 560px) {
       .journey-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .form-wrap { padding: 28px 20px; }
-      .hero-stats { gap: 20px; }
+      .proof-shell { padding: 24px 20px; }
+      .hero-stats { flex-direction: column; gap: 16px; }
+      .stat-item { padding: 0; }
+      .stat-item + .stat-item { border-left: none; border-top: 1px solid var(--border); padding-top: 16px; }
     }
+
+    /* ─── SCARCITY / EXCLUSIVITY ─── */
+    .exclusivity-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+    .exclusivity-line strong { color: var(--white); font-weight: 700; }
+    .exclusivity-dot { color: var(--orange); font-size: 9px; flex-shrink: 0; }
+    .scarcity-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(245,166,35,0.07);
+      border: 1px solid rgba(245,166,35,0.22);
+      border-radius: 10px;
+      padding: 11px 22px;
+      font-size: 14px;
+      color: var(--light);
+      margin-bottom: 32px;
+    }
+    .scarcity-badge strong { color: var(--orange); font-weight: 700; }
 
     /* ─── SCROLL ANIMATION ─── */
     .reveal {
@@ -591,7 +871,12 @@
 <nav>
   <div class="nav-inner">
     <img src="macro-logo.png" alt="Método MACRO" class="nav-logo" />
-    <a href="#lead"><button class="btn-nav">Quero minha vaga gratuita</button></a>
+    <div class="nav-links">
+      <a href="#proof" class="nav-link">O Que Sai Pronto</a>
+      <a href="#method" class="nav-link">O Método</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </div>
+    <a href="#lead" class="btn-nav">Agendar diagnóstico</a>
   </div>
 </nav>
 
@@ -601,43 +886,80 @@
   <div class="container">
     <div class="hero-grid">
       <div class="hero-content">
-        <p class="hero-eyebrow">Mentoria Agentic MACRO · Luciano Santos Borges</p>
+        <p class="hero-eyebrow">Mentoria 1:1 para produto, operações e gestão</p>
         <h1 class="hero-title">
-          Você talvez não esteja <span class="grad-text">usando IA.</span><br>
-          Só ganhou um chatbot caro.
+          Transforme o uso solto de <span class="grad-text">IA</span><br>
+          em vantagem operacional real.
         </h1>
         <p class="hero-sub">
-          Aprenda a transformar IA em vantagem operacional real com o Método MACRO:
-          Mapeamento, Arquitetura, Contexto, Regência e Otimização aplicados a um fluxo real do seu trabalho.
+          Mentoria prática para POs, PMs, Product Ops, Scrum Masters e lideranças que já usam IA,
+          mas ainda não conseguem aplicá-la com método, contexto, regência humana e métricas em um fluxo real de trabalho.
         </p>
-        <div class="hero-cta-row">
-          <a href="#lead"><button class="btn-primary">Quero minha conversa estratégica gratuita</button></a>
-          <a href="#method"><button class="btn-secondary">Ver o método</button></a>
+        <div class="hero-support">
+          <span class="hero-support-mark"></span>
+          <p><strong>Em 4 semanas</strong>, você sai com um Blueprint Agentic MACRO, um mini ecossistema testável e um plano de piloto aplicado ao seu próprio contexto.</p>
         </div>
-        <p style="margin-top:16px; font-size:13px;">
-          <a href="macro.pdf" download style="color:var(--muted); text-decoration:underline; text-underline-offset:3px; transition:color .2s;"
-             onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--muted)'">
-            ↓ Baixar o guia do Método MACRO (PDF)
-          </a>
+        <div class="hero-cta-row">
+          <a href="#lead" class="btn-primary">Agendar diagnóstico estratégico</a>
+          <a href="#method" class="btn-secondary">Ver o método</a>
+        </div>
+        <p class="exclusivity-line">
+          <span class="exclusivity-dot">●</span>
+          Mentoria 1:1 · <strong>apenas 2 participantes por mês</strong> — exclusividade garantida
         </p>
         <div class="hero-stats">
           <div class="stat-item">
-            <span class="stat-num grad-text">8</span>
-            <span class="stat-label">Encontros síncronos</span>
+            <span class="stat-num grad-text">16h</span>
+            <span class="stat-label">De trabalho no seu caso real</span>
           </div>
           <div class="stat-item">
-            <span class="stat-num grad-text">4</span>
-            <span class="stat-label">Semanas de duração</span>
+            <span class="stat-num grad-text">2</span>
+            <span class="stat-label">Entregáveis prontos para piloto</span>
           </div>
           <div class="stat-item">
             <span class="stat-num grad-text">1</span>
-            <span class="stat-label">Blueprint aplicado ao seu fluxo</span>
+            <span class="stat-label">Fluxo real com IA operando</span>
           </div>
         </div>
       </div>
       <div class="hero-image-wrap">
         <div class="hero-image-bg"></div>
         <img src="capa.png" alt="Mentoria Agentic MACRO — Transformando IA em Vantagem Operacional" class="hero-image" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PROOF ═══════════ -->
+<section id="proof">
+  <div class="container">
+    <div class="proof-shell reveal">
+      <div class="proof-head">
+        <div>
+          <span class="tag">O que sai pronto</span>
+          <h2 class="section-title">Você não sai com teoria.<br>Sai com ativos para <span class="grad-text">colocar IA em operação</span>.</h2>
+          <p class="section-sub">A mentoria transforma um problema real do seu trabalho em uma solução mínima, governada e pronta para piloto.</p>
+        </div>
+        <div class="proof-note">
+          <strong>Esse é o ponto central da oferta:</strong> a jornada não termina em benchmark, inspiração ou coleção de prompts. Ela termina com decisão, artefato e plano de execução no seu caso real.
+        </div>
+      </div>
+      <div class="proof-grid">
+        <div class="proof-card">
+          <div class="proof-kicker">Entregável 01</div>
+          <h3>Blueprint Agentic MACRO aplicado ao seu fluxo</h3>
+          <p>Mapa de oportunidade, arquitetura mínima, contexto, limites de autonomia, quality gates, métricas e plano de piloto reunidos em um único artefato.</p>
+        </div>
+        <div class="proof-card">
+          <div class="proof-kicker">Entregável 02</div>
+          <h3>Mini ecossistema agentic simples e testável</h3>
+          <p>Prompt profissional, skill simples, desenho de agente ou workflow, contexto operacional e teste documentado com revisão humana.</p>
+        </div>
+        <div class="proof-card">
+          <div class="proof-kicker">Resultado prático</div>
+          <h3>Um piloto possível para as próximas 2 a 4 semanas</h3>
+          <p>Você sai com clareza sobre onde IA gera valor, o que ainda não deve automatizar e como medir impacto sem overengineering.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -701,24 +1023,24 @@
         <div class="about-creds">
           <span class="about-cred">20+ anos em tech</span>
           <span class="about-cred">Ciência da Computação</span>
-          <span class="about-cred">MBA USP</span>
+          <span class="about-cred">MBA Gestão de Negócios</span>
           <span class="about-cred">Especialização em IA</span>
-          <span class="about-cred">Lisboa, Portugal</span>
+
         </div>
       </div>
 
       <div class="reveal">
         <span class="tag">Quem conduz a mentoria</span>
         <h2 class="section-title">Luciano <span class="grad-text">Borges</span></h2>
-        <p class="about-role">Product Owner · Critical TechWorks · Lisboa</p>
+        <p class="about-role">Transformo IA em Vantagem Operacional</p>
         <blockquote class="about-quote">
           &ldquo;A IA não resolve um processo mal definido.<br>Ela apenas acelera os seus efeitos.&rdquo;
         </blockquote>
         <p class="about-text">
           Trabalho na interseção onde Produto, Engenharia de Software, Agilidade e Inteligência Artificial se encontram.
-          Com mais de 20 anos de trajetória em tecnologia — como Engenheiro de Software e Arquiteto de Soluções
-          (incluindo o Documento Nacional de Identidade), Scrum Master, Professor Universitário e hoje Product Owner
-          na Critical TechWorks em Lisboa —, desenvolvi uma visão direta sobre a transformação digital atual.
+          Com mais de 20 anos de trajetória em tecnologia — como Engenheiro de Software, Arquiteto de Soluções,
+          Scrum Master, Professor Universitário e hoje Product Owner no setor de tecnologia —, desenvolvi uma visão
+          direta sobre a transformação digital atual.
         </p>
         <p class="about-text" style="margin-top:16px;">
           No cenário onde times geram código, protótipos e análises em velocidade recorde, o verdadeiro diferencial
@@ -741,8 +1063,8 @@
           <span class="tag">O método</span>
           <h2 class="section-title">O Método <span class="grad-text">MACRO</span></h2>
           <p class="section-sub">
-            Antes de criar agentes, automatizar tarefas ou testar mais ferramentas,
-            você precisa responder as perguntas certas. O MACRO cria esse trilho.
+            O MACRO organiza o trabalho antes da automação: onde existe desperdício real,
+            qual a menor arquitetura suficiente, que contexto a IA precisa, quais limites humanos entram e como medir resultado.
           </p>
         </div>
         <div class="method-pillars">
@@ -821,6 +1143,10 @@
         </tbody>
       </table>
     </div>
+    <div class="reveal" style="text-align:center; margin-top:60px;">
+      <p style="font-size:16px; color:var(--light); margin-bottom:24px;">Pronto para construir isso no seu fluxo real?</p>
+      <a href="#lead" class="btn-primary">Agendar diagnóstico estratégico</a>
+    </div>
   </div>
 </section>
 
@@ -829,9 +1155,9 @@
   <div class="container">
     <div class="reveal" style="text-align:center; margin-bottom:52px;">
       <span class="tag">O que você leva</span>
-      <h2 class="section-title">Dois entregáveis concretos</h2>
+      <h2 class="section-title">O que você constrói ao longo da mentoria</h2>
       <p class="section-sub" style="margin:0 auto;">
-        Você não sai apenas com clareza. Sai com artefatos aplicados ao seu fluxo real, prontos para piloto.
+        Não é um curso de ferramenta. Cada bloco abaixo existe para transformar um caso real do seu trabalho em uma operação mais clara, governada e mensurável.
       </p>
     </div>
     <div class="deliverables-grid">
@@ -888,56 +1214,62 @@
   </div>
 </section>
 
+<!-- ═══════════ WHY 1:1 ═══════════ -->
+<section id="why-one">
+  <div class="container">
+    <div class="why-header reveal">
+      <span class="tag">Por que 1:1</span>
+      <h2 class="section-title">Essa mentoria atende só <span class="grad-text">2 pessoas por mês</span> por um motivo.</h2>
+      <p class="section-sub">O valor da jornada não está em assistir conteúdo. Está em desenhar uma solução proporcional ao seu contexto, revisar artefatos e tomar decisões sobre um fluxo real.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <h3>Seu fluxo real vira o centro da mentoria</h3>
+        <p>Cada encontro trabalha o seu caso, com as restrições, ambiguidade, dependências e trade-offs que já existem no seu ambiente de trabalho.</p>
+      </div>
+      <div class="why-card reveal">
+        <h3>Os artefatos são refinados com profundidade</h3>
+        <p>Blueprint, contexto, prompt, skill, workflow e plano de piloto não saem de template genérico. Eles são ajustados à sua realidade para reduzir risco e retrabalho.</p>
+      </div>
+      <div class="why-card reveal">
+        <h3>A exclusividade protege qualidade, não cria hype</h3>
+        <p>Limitar a agenda a 2 participantes por mês permite acompanhamento próximo, suporte assíncrono útil e mais precisão na tomada de decisão durante a jornada.</p>
+      </div>
+    </div>
+    <p class="why-close reveal">Se você procura escala de conteúdo, grupo grande ou coleção de prompts, essa não é a melhor oferta. Se você quer aplicar IA com responsabilidade em um fluxo real, o formato 1:1 faz diferença.</p>
+  </div>
+</section>
+
 <!-- ═══════════ JOURNEY ═══════════ -->
 <section id="journey">
   <div class="container">
     <div class="journey-header reveal">
       <span class="tag">A jornada</span>
-      <h2 class="section-title">8 encontros, 4 semanas</h2>
+      <h2 class="section-title">4 fases, 8 encontros</h2>
       <p class="section-sub">
-        Cada encontro produz um artefato. O caso real é o mesmo do começo ao fim — você não estuda exemplos de outros, você constrói o seu.
+        Em vez de listar oito aulas isoladas, a mentoria organiza o trabalho em quatro fases que conduzem do diagnóstico ao piloto com evidência.
       </p>
     </div>
     <div class="journey-grid">
       <div class="journey-card reveal">
-        <div class="journey-num">Encontro 01</div>
-        <div class="journey-title">De usar IA para operar com IA</div>
-        <div class="journey-output">Entregável: fluxo real escolhido com potencial agentic</div>
+        <div class="journey-num">Fase 01 · Encontros 1 e 2</div>
+        <div class="journey-title">Diagnóstico e priorização da oportunidade</div>
+        <div class="journey-output">Saída: fluxo real escolhido, desperdício mapeado e oportunidade de IA priorizada com critério.</div>
       </div>
       <div class="journey-card reveal">
-        <div class="journey-num">Encontro 02</div>
-        <div class="journey-title">Mapeamento de oportunidades agentic</div>
-        <div class="journey-output">Entregável: mapa de oportunidade e restrição do fluxo</div>
+        <div class="journey-num">Fase 02 · Encontros 3 e 4</div>
+        <div class="journey-title">Desenho da solução mínima</div>
+        <div class="journey-output">Saída: arquitetura proporcional, prompt profissional e desenho do skill, workflow ou agente quando fizer sentido.</div>
       </div>
       <div class="journey-card reveal">
-        <div class="journey-num">Encontro 03</div>
-        <div class="journey-title">Arquitetura mínima para IA</div>
-        <div class="journey-output">Entregável: decisão de modo de IA e prompt profissional v1</div>
-      </div>
-      <div class="journey-card reveal">
-        <div class="journey-num">Encontro 04</div>
-        <div class="journey-title">Agentes e workflows sem overengineering</div>
-        <div class="journey-output">Entregável: skill simples e desenho de agente ou workflow</div>
-      </div>
-      <div class="journey-card reveal">
-        <div class="journey-num">Encontro 05</div>
-        <div class="journey-title">Contexto como infraestrutura operacional</div>
-        <div class="journey-output">Entregável: Context Pack e RAG simulado</div>
-      </div>
-      <div class="journey-card reveal">
-        <div class="journey-num">Encontro 06</div>
-        <div class="journey-title">Regência, autonomia e MCP</div>
-        <div class="journey-output">Entregável: matriz de permissões e MCP Opportunity Map</div>
-      </div>
-      <div class="journey-card reveal">
-        <div class="journey-num">Encontro 07</div>
-        <div class="journey-title">Otimização e observabilidade</div>
-        <div class="journey-output">Entregável: teste documentado do mini ecossistema agentic</div>
+        <div class="journey-num">Fase 03 · Encontros 5 e 6</div>
+        <div class="journey-title">Contexto, regência e segurança operacional</div>
+        <div class="journey-output">Saída: Context Pack, limites de autonomia, permissões, quality gates e mapa de oportunidades de integração.</div>
       </div>
       <div class="journey-card reveal" style="border-color: rgba(0,149,229,0.3);">
-        <div class="journey-num" style="color:var(--blue)">Encontro 08</div>
-        <div class="journey-title">Clínica final e plano de piloto</div>
-        <div class="journey-output">Entregável: Blueprint final e mini ecossistema agentic demonstrável</div>
+        <div class="journey-num" style="color:var(--blue)">Fase 04 · Encontros 7 e 8</div>
+        <div class="journey-title">Teste, observabilidade e plano de piloto</div>
+        <div class="journey-output">Saída: Blueprint final, mini ecossistema validado, scorecard e decisão clara para as próximas 2 a 4 semanas.</div>
       </div>
     </div>
   </div>
@@ -1023,10 +1355,40 @@
     <div class="lead-inner">
       <div class="reveal">
         <span class="tag">Próximo passo</span>
-        <h2 class="section-title">Solicite sua conversa<br><span class="grad-text">estratégica gratuita</span></h2>
+        <h2 class="section-title">Agende seu<br><span class="grad-text">diagnóstico estratégico</span></h2>
         <p class="section-sub">
-          45 minutos para mapear onde você está, identificar seu principal gargalo no uso de IA e desenhar um primeiro caminho possível.
+          Uma conversa de 45 minutos para entender onde IA já entra no seu trabalho, identificar o principal gargalo operacional e avaliar se faz sentido transformar isso em um piloto real.
         </p>
+      </div>
+      <div class="lead-decision-grid reveal">
+        <div class="lead-card">
+          <h3>Essa conversa faz sentido se...</h3>
+          <ul class="lead-list">
+            <li>você já usa IA, mas ainda não consegue provar ganho operacional;</li>
+            <li>há um fluxo real que precisa de mais clareza, contexto e governança;</li>
+            <li>você quer decidir com critério se agente, workflow ou solução simples resolve.</li>
+          </ul>
+        </div>
+        <div class="lead-card">
+          <h3>Você sai da conversa com...</h3>
+          <ul class="lead-list">
+            <li>um diagnóstico inicial do seu cenário atual;</li>
+            <li>o principal gargalo priorizado para atacar primeiro;</li>
+            <li>uma visão inicial do melhor próximo passo para o seu caso.</li>
+          </ul>
+        </div>
+        <div class="lead-card">
+          <h3>Antes de agendar, venha com...</h3>
+          <ul class="lead-list">
+            <li>seu cargo ou contexto de atuação;</li>
+            <li>um fluxo específico que você quer melhorar com IA;</li>
+            <li>uma noção breve de como você usa IA hoje.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="scarcity-badge reveal">
+        <span class="exclusivity-dot" style="font-size:11px;">●</span>
+        Atendimento exclusivo 1:1 — <strong>apenas 2 vagas disponíveis por mês</strong>
       </div>
       <!-- Calendly inline widget begin -->
       <div class="calendly-inline-widget reveal"
@@ -1034,6 +1396,7 @@
            style="min-width:320px; height:700px; border-radius:16px; overflow:hidden;"></div>
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       <!-- Calendly inline widget end -->
+      <p class="lead-privacy-note reveal">Ao agendar, você compartilha seus dados com Luciano Santos Borges e com o Calendly para viabilizar a marcação, o contato posterior e a avaliação de aderência da mentoria. A página também registra eventos mínimos de navegação, origem e interação para entender o desempenho da captação. Leia a <a href="privacidade.html">Política de Privacidade</a>.</p>
     </div>
   </div>
 </section>
@@ -1044,13 +1407,14 @@
     <img src="macro-logo.png" alt="Método MACRO" class="footer-logo" />
     <p class="footer-text">Mentoria Agentic MACRO · Luciano Santos Borges</p>
     <p class="footer-text" style="margin-top:8px; font-size:11px;">Transformando IA em vantagem operacional.</p>
-    <p style="margin-top:16px;">
-      <a href="macro.pdf" download style="font-size:12px; color:var(--muted); text-decoration:underline; text-underline-offset:3px;">
-        ↓ Baixar o guia do Método MACRO (PDF)
-      </a>
-    </p>
+    <div class="footer-links">
+      <a href="macro.pdf" download>↓ Baixar o guia do Método MACRO (PDF)</a>
+      <a href="privacidade.html">Política de Privacidade</a>
+    </div>
   </div>
 </footer>
+
+<a href="#lead" class="mobile-sticky-cta">Agendar diagnóstico estratégico</a>
 
 <script>
   /* ── Scroll reveal ── */
@@ -1064,6 +1428,184 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* ── Analytics-ready event layer ── */
+  globalThis.dataLayer = globalThis.dataLayer || [];
+
+  const STORAGE_KEYS = {
+    session: 'macro_session_id_v1',
+    attribution: 'macro_attribution_v1'
+  };
+
+  const getOrCreateSessionId = () => {
+    const existing = localStorage.getItem(STORAGE_KEYS.session);
+    if (existing) return existing;
+
+    const generated = globalThis.crypto && globalThis.crypto.randomUUID
+      ? globalThis.crypto.randomUUID()
+      : `session_${Date.now()}_${Math.random().toString(16).slice(2)}`;
+
+    localStorage.setItem(STORAGE_KEYS.session, generated);
+    return generated;
+  };
+
+  const readStoredAttribution = () => {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEYS.attribution) || '{}');
+    } catch {
+      return {};
+    }
+  };
+
+  const persistAttribution = () => {
+    const params = new URLSearchParams(globalThis.location.search);
+    const current = {
+      utm_source: params.get('utm_source') || '',
+      utm_medium: params.get('utm_medium') || '',
+      utm_campaign: params.get('utm_campaign') || '',
+      utm_content: params.get('utm_content') || '',
+      utm_term: params.get('utm_term') || '',
+      referrer: document.referrer || '',
+      landing_path: globalThis.location.pathname,
+      landing_url: globalThis.location.href,
+      first_seen_at: new Date().toISOString()
+    };
+
+    const stored = readStoredAttribution();
+    const hasIncomingAttribution = Object.values(current).some(Boolean);
+    const finalAttribution = hasIncomingAttribution
+      ? { ...stored, ...current, first_seen_at: stored.first_seen_at || current.first_seen_at }
+      : stored;
+
+    localStorage.setItem(STORAGE_KEYS.attribution, JSON.stringify(finalAttribution));
+    return finalAttribution;
+  };
+
+  const sessionId = getOrCreateSessionId();
+  const attribution = persistAttribution();
+
+  const pushAnalytics = (eventName, payload = {}) => {
+    const eventPayload = {
+      event: eventName,
+      event_name: eventName,
+      page_path: globalThis.location.pathname,
+      page_title: document.title,
+      session_id: sessionId,
+      timestamp: new Date().toISOString(),
+      ...attribution,
+      ...payload
+    };
+
+    globalThis.dataLayer.push(eventPayload);
+
+    if (typeof globalThis.gtag === 'function') {
+      globalThis.gtag('event', eventName, eventPayload);
+    }
+
+    if (typeof globalThis.plausible === 'function') {
+      globalThis.plausible(eventName, { props: eventPayload });
+    }
+
+    globalThis.dispatchEvent(new CustomEvent('macro:analytics', { detail: eventPayload }));
+  };
+
+  globalThis.macroAnalytics = {
+    sessionId,
+    attribution,
+    push: pushAnalytics
+  };
+
+  const getElementLocation = (element) => {
+    const section = element.closest('section');
+    if (section && section.id) return section.id;
+    if (element.closest('nav')) return 'nav';
+    if (element.closest('footer')) return 'footer';
+    return 'document';
+  };
+
+  pushAnalytics('page_view', {
+    viewport: `${window.innerWidth}x${window.innerHeight}`
+  });
+
+  document.querySelectorAll('a.btn-nav, a.btn-primary, a.btn-secondary, a.mobile-sticky-cta').forEach((element) => {
+    element.addEventListener('click', () => {
+      pushAnalytics('cta_click', {
+        cta_text: element.textContent.trim(),
+        cta_href: element.getAttribute('href') || '',
+        cta_location: getElementLocation(element)
+      });
+    });
+  });
+
+  document.querySelectorAll('a[href="macro.pdf"]').forEach((element) => {
+    element.addEventListener('click', () => {
+      pushAnalytics('pdf_download_click', {
+        asset: 'macro.pdf',
+        click_location: getElementLocation(element)
+      });
+    });
+  });
+
+  document.querySelectorAll('#faq details').forEach((detail) => {
+    detail.addEventListener('toggle', () => {
+      if (detail.open) {
+        pushAnalytics('faq_open', {
+          faq_question: (detail.querySelector('summary') || {}).textContent?.trim() || ''
+        });
+      }
+    });
+  });
+
+  const scrollMilestones = [25, 50, 75, 90];
+  const firedScrollMilestones = new Set();
+
+  const handleScrollTracking = () => {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (scrollableHeight <= 0) return;
+
+    const percent = Math.round((window.scrollY / scrollableHeight) * 100);
+
+    scrollMilestones.forEach((milestone) => {
+      if (percent >= milestone && !firedScrollMilestones.has(milestone)) {
+        firedScrollMilestones.add(milestone);
+        pushAnalytics('scroll_depth', { scroll_percent: milestone });
+      }
+    });
+  };
+
+  globalThis.addEventListener('scroll', handleScrollTracking, { passive: true });
+  handleScrollTracking();
+
+  const calendlyWidget = document.querySelector('.calendly-inline-widget');
+  if (calendlyWidget) {
+    const calendlyObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          pushAnalytics('calendly_widget_view', { widget_location: 'lead' });
+          calendlyObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.35 });
+
+    calendlyObserver.observe(calendlyWidget);
+  }
+
+  globalThis.addEventListener('message', (event) => {
+    if (!String(event.origin || '').includes('calendly.com')) return;
+
+    const calendlyEvent = event.data && event.data.event;
+    if (typeof calendlyEvent !== 'string' || !calendlyEvent.startsWith('calendly.')) return;
+
+    pushAnalytics('calendly_event', {
+      calendly_event: calendlyEvent
+    });
+
+    if (calendlyEvent === 'calendly.event_scheduled') {
+      pushAnalytics('calendly_booked', {
+        calendly_event: calendlyEvent
+      });
+    }
+  });
 
 
 </script>
