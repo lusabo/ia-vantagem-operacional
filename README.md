@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentoria Agentic MACRO — Transforme IA em Vantagem Operacional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── RESET & BASE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:   #0a0a0a;
+      --dark:    #111111;
+      --card:    #161616;
+      --border:  #242424;
+      --muted:   #666666;
+      --light:   #999999;
+      --white:   #ffffff;
+      --blue:    #0095E5;
+      --cyan:    #00C4D4;
+      --green:   #22C55E;
+      --orange:  #F5A623;
+      --yellow:  #FFD600;
+      --grad: linear-gradient(135deg, #0095E5 0%, #00C4D4 30%, #22C55E 55%, #F5A623 80%, #FF6B00 100%);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── UTILITIES ─── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .grad-text {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      color: var(--light);
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--light);
+      max-width: 640px;
+      line-height: 1.7;
+    }
+    .divider {
+      width: 48px; height: 3px;
+      background: var(--grad);
+      border-radius: 2px;
+      margin-bottom: 24px;
+    }
+
+    /* ─── GLOW ─── */
+    .glow-blue  { box-shadow: 0 0 40px rgba(0,149,229,0.15); }
+    .glow-cyan  { box-shadow: 0 0 40px rgba(0,196,212,0.15); }
+    .glow-green { box-shadow: 0 0 40px rgba(34,197,94,0.15);  }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { height: 36px; width: auto; }
+    .btn-nav {
+      background: var(--grad);
+      color: var(--black);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 22px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: opacity .2s, transform .2s;
+      letter-spacing: 0.02em;
+    }
+    .btn-nav:hover { opacity: .88; transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 60% 40%, rgba(0,149,229,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 70%, rgba(245,166,35,0.06) 0%, transparent 70%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 18px;
+    }
+    .hero-title {
+      font-size: clamp(36px, 5vw, 62px);
+      font-weight: 900;
+      line-height: 1.08;
+      margin-bottom: 24px;
+    }
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--light);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+    .hero-cta-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--grad);
+      color: var(--black);
+      font-weight: 800;
+      font-size: 15px;
+      padding: 16px 32px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: opacity .2s, transform .2s;
+      letter-spacing: 0.01em;
+    }
+    .btn-primary:hover { opacity: .88; transform: translateY(-2px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--light);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 16px 24px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-secondary:hover { border-color: var(--muted); color: var(--white); }
+    .hero-image-wrap {
+      position: relative;
+      display: flex; justify-content: center; align-items: center;
+    }
+    .hero-image-bg {
+      position: absolute; inset: -20px;
+      background: radial-gradient(ellipse, rgba(0,149,229,0.12) 0%, transparent 70%);
+    }
+    .hero-image {
+      width: 100%;
+      max-width: 440px;
+      border-radius: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-stats {
+      display: flex; gap: 32px; margin-top: 44px; flex-wrap: wrap;
+    }
+    .stat-item { display: flex; flex-direction: column; gap: 2px; }
+    .stat-num { font-size: 28px; font-weight: 800; }
+    .stat-label { font-size: 12px; color: var(--muted); letter-spacing: 0.05em; }
+
+    /* ─── PAIN ─── */
+    #pain {
+      padding: 100px 0;
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .pain-header { text-align: center; margin-bottom: 60px; }
+    .pain-header .section-sub { margin: 0 auto; }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .pain-card {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      transition: border-color .2s;
+    }
+    .pain-card:hover { border-color: #333; }
+    .pain-icon {
+      font-size: 24px;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .pain-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+    .pain-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* ─── METHOD ─── */
+    #method { padding: 100px 0; }
+    .method-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .method-image {
+      max-width: 440px;
+      border-radius: 16px;
+    }
+    .method-pillars { display: flex; flex-direction: column; gap: 20px; margin-top: 40px; }
+    .pillar {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--card);
+      transition: border-color .2s, transform .2s;
+    }
+    .pillar:hover { transform: translateX(4px); }
+    .pillar-letter {
+      font-size: 22px;
+      font-weight: 900;
+      min-width: 36px;
+      text-align: center;
+      line-height: 1;
+      padding-top: 2px;
+    }
+    .pillar-letter.m { color: var(--blue); }
+    .pillar-letter.a { color: var(--cyan); }
+    .pillar-letter.c { color: var(--green); }
+    .pillar-letter.r { color: var(--orange); }
+    .pillar-letter.o { color: var(--yellow); }
+    .pillar:hover.pm { border-color: var(--blue); }
+    .pillar:hover.pa { border-color: var(--cyan); }
+    .pillar:hover.pc { border-color: var(--green); }
+    .pillar:hover.pr { border-color: var(--orange); }
+    .pillar:hover.po { border-color: var(--yellow); }
+    .pillar-name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
+    .pillar-desc { font-size: 13px; color: var(--muted); }
+
+    /* ─── TRANSFORMATION ─── */
+    #transform {
+      padding: 100px 0;
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .transform-header { text-align: center; margin-bottom: 60px; }
+    .transform-header .section-sub { margin: 0 auto; }
+    .transform-table-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    thead th {
+      padding: 14px 20px;
+      text-align: left;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    thead th:first-child { color: var(--muted); border-bottom: 2px solid var(--border); }
+    thead th:last-child  { color: var(--cyan);  border-bottom: 2px solid var(--cyan); }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background .15s; }
+    tbody tr:hover { background: rgba(255,255,255,0.02); }
+    tbody td { padding: 14px 20px; }
+    tbody td:first-child { color: var(--muted); font-size: 14px; }
+    tbody td:last-child  { color: var(--white); font-size: 14px; font-weight: 500; }
+    .td-arrow { color: var(--border); text-align: center; width: 40px; }
+
+    /* ─── DELIVERABLES ─── */
+    #deliverables { padding: 100px 0; }
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 52px;
+    }
+    .del-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      transition: border-color .2s, transform .2s;
+    }
+    .del-card:hover { transform: translateY(-4px); }
+    .del-card.blue  { border-top: 3px solid var(--blue);   }
+    .del-card.cyan  { border-top: 3px solid var(--cyan);   }
+    .del-card.green { border-top: 3px solid var(--green);  }
+    .del-card.orange{ border-top: 3px solid var(--orange); }
+    .del-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+    .del-card p  { font-size: 14px; color: var(--muted); margin-bottom: 18px; line-height: 1.6; }
+    .del-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .del-list li { font-size: 14px; color: var(--light); display: flex; align-items: flex-start; gap: 8px; }
+    .del-list li::before { content: "→"; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .del-card.blue  .del-list li::before { color: var(--blue); }
+    .del-card.cyan  .del-list li::before { color: var(--cyan); }
+    .del-card.green .del-list li::before { color: var(--green); }
+    .del-card.orange .del-list li::before { color: var(--orange); }
+
+    /* ─── JOURNEY ─── */
+    #journey {
+      padding: 100px 0;
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .journey-header { text-align: center; margin-bottom: 60px; }
+    .journey-header .section-sub { margin: 0 auto; }
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .journey-card {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      transition: border-color .2s;
+    }
+    .journey-card:hover { border-color: #333; }
+    .journey-num {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+    }
+    .journey-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+    .journey-output { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* ─── FOR WHOM ─── */
+    #audience { padding: 100px 0; }
+    .audience-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+      margin-top: 52px;
+    }
+    .audience-block h3 { font-size: 16px; font-weight: 700; margin-bottom: 18px; }
+    .audience-block.yes h3 { color: var(--green); }
+    .audience-block.no  h3 { color: var(--muted); }
+    .audience-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .audience-list li { font-size: 15px; color: var(--light); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+    .check { color: var(--green); font-weight: 900; flex-shrink: 0; }
+    .cross { color: var(--muted); font-weight: 900; flex-shrink: 0; }
+
+    /* ─── FAQ ─── */
+    #faq {
+      padding: 100px 0;
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-header { text-align: center; margin-bottom: 60px; }
+    .faq-grid { display: flex; flex-direction: column; gap: 2px; max-width: 760px; margin: 0 auto; }
+    details {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color .2s;
+    }
+    details[open] { border-color: #333; }
+    summary {
+      cursor: pointer;
+      padding: 20px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px;
+      list-style: none;
+      user-select: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      font-size: 20px;
+      color: var(--muted);
+      flex-shrink: 0;
+      transition: transform .2s;
+    }
+    details[open] summary::after { content: "−"; }
+    .faq-answer { padding: 0 24px 20px; font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    /* ─── LEAD FORM ─── */
+    #lead {
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .lead-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,149,229,0.07) 0%, transparent 70%);
+    }
+    .lead-inner {
+      max-width: 620px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative; z-index: 1;
+    }
+    .lead-inner .section-title { margin-bottom: 14px; }
+    .lead-inner .section-sub  { margin: 0 auto 40px; }
+    .form-wrap {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: left;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 7px; color: var(--light); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      padding: 13px 16px;
+      transition: border-color .2s;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--blue); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-group select option { background: #1a1a1a; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-submit {
+      width: 100%;
+      background: var(--grad);
+      color: var(--black);
+      font-weight: 800;
+      font-size: 16px;
+      padding: 16px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: opacity .2s, transform .2s;
+      margin-top: 8px;
+      letter-spacing: 0.01em;
+    }
+    .form-submit:hover { opacity: .88; transform: translateY(-2px); }
+    .form-note { text-align: center; font-size: 12px; color: var(--muted); margin-top: 14px; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 48px 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .footer-logo { height: 28px; margin: 0 auto 16px; }
+    .footer-text { font-size: 13px; color: var(--muted); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero-grid    { grid-template-columns: 1fr; }
+      .hero-image-wrap { display: none; }
+      .method-layout { grid-template-columns: 1fr; gap: 48px; }
+      .deliverables-grid { grid-template-columns: 1fr; }
+      .journey-grid { grid-template-columns: repeat(2, 1fr); }
+      .audience-layout { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 560px) {
+      .journey-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-wrap { padding: 28px 20px; }
+      .hero-stats { gap: 20px; }
+    }
+
+    /* ─── SCROLL ANIMATION ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav>
+  <div class="nav-inner">
+    <img src="macro-logo.png" alt="Método MACRO" class="nav-logo" />
+    <a href="#lead"><button class="btn-nav">Quero minha vaga gratuita</button></a>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Mentoria Agentic MACRO · Luciano Santos Borges</p>
+        <h1 class="hero-title">
+          Você talvez não esteja <span class="grad-text">usando IA.</span><br>
+          Só ganhou um chatbot caro.
+        </h1>
+        <p class="hero-sub">
+          Aprenda a transformar IA em vantagem operacional real com o Método MACRO:
+          Mapeamento, Arquitetura, Contexto, Regência e Otimização aplicados a um fluxo real do seu trabalho.
+        </p>
+        <div class="hero-cta-row">
+          <a href="#lead"><button class="btn-primary">Quero minha conversa estratégica gratuita</button></a>
+          <a href="#method"><button class="btn-secondary">Ver o método</button></a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num grad-text">8</span>
+            <span class="stat-label">Encontros síncronos</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num grad-text">4</span>
+            <span class="stat-label">Semanas de duração</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num grad-text">1</span>
+            <span class="stat-label">Blueprint aplicado ao seu fluxo</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <div class="hero-image-bg"></div>
+        <img src="capa.png" alt="Mentoria Agentic MACRO — Transformando IA em Vantagem Operacional" class="hero-image" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PAIN ═══════════ -->
+<section id="pain">
+  <div class="container">
+    <div class="pain-header reveal">
+      <span class="tag">O problema</span>
+      <h2 class="section-title">Você reconhece alguma dessas situações?</h2>
+      <p class="section-sub">
+        Muitos profissionais já usam IA, mas continuam presos nos mesmos problemas.
+        A IA aumenta o output, mas o fluxo não melhora.
+      </p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <span class="pain-icon">⚡</span>
+        <h3>Prompts soltos sem contexto</h3>
+        <p>Você copia e cola perguntas genéricas e recebe respostas boas hoje, ruins amanhã. Não há consistência nem reutilização.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-icon">🔄</span>
+        <h3>IA que acelera o retrabalho</h3>
+        <p>Mais output não significa menos retrabalho. O fluxo ainda quebra no mesmo ponto, só com mais velocidade.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-icon">🌫️</span>
+        <h3>Contexto espalhado em todo lugar</h3>
+        <p>Decisões em reuniões, regras em mensagens, exemplos na cabeça do especialista. A IA opera no escuro.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-icon">📊</span>
+        <h3>Sem evidência de impacto real</h3>
+        <p>Você sente que está sendo mais produtivo, mas não consegue provar onde a IA reduziu tempo, custo ou erro.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-icon">🤖</span>
+        <h3>Empolgação com agentes sem uso real</h3>
+        <p>Você ouve falar em agentes, RAG, MCP, workflows inteligentes — mas não sabe como isso entra no seu fluxo real.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-icon">🎭</span>
+        <h3>Teatro de produtividade</h3>
+        <p>Bonito no LinkedIn. Fraco no resultado. A IA virou uma camada sobre um processo ainda confuso e manual.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ METHOD ═══════════ -->
+<section id="method">
+  <div class="container">
+    <div class="method-layout">
+      <div>
+        <div class="reveal">
+          <span class="tag">O método</span>
+          <h2 class="section-title">O Método <span class="grad-text">MACRO</span></h2>
+          <p class="section-sub">
+            Antes de criar agentes, automatizar tarefas ou testar mais ferramentas,
+            você precisa responder as perguntas certas. O MACRO cria esse trilho.
+          </p>
+        </div>
+        <div class="method-pillars">
+          <div class="pillar pm reveal">
+            <span class="pillar-letter m">M</span>
+            <div>
+              <div class="pillar-name" style="color:var(--blue)">Mapeamento</div>
+              <div class="pillar-desc">Identifica desperdícios reais no fluxo antes de qualquer ferramenta. Não começa por IA — começa por onde o trabalho perde inteligência, tempo ou qualidade.</div>
+            </div>
+          </div>
+          <div class="pillar pa reveal">
+            <span class="pillar-letter a">A</span>
+            <div>
+              <div class="pillar-name" style="color:var(--cyan)">Arquitetura</div>
+              <div class="pillar-desc">Escolhe a menor solução capaz de resolver o problema com confiança. Checklist? Template? Workflow? Agente? Multiagente? A maturidade certa para cada caso.</div>
+            </div>
+          </div>
+          <div class="pillar pc reveal">
+            <span class="pillar-letter c">C</span>
+            <div>
+              <div class="pillar-name" style="color:var(--green)">Contexto</div>
+              <div class="pillar-desc">Prompt é porta de entrada. Contexto é infraestrutura. Transforma regras, exemplos e fontes em Context Pack operacional e RAG simulado reutilizável.</div>
+            </div>
+          </div>
+          <div class="pillar pr reveal">
+            <span class="pillar-letter r">R</span>
+            <div>
+              <div class="pillar-name" style="color:var(--orange)">Regência</div>
+              <div class="pillar-desc">Define o que a IA pode sugerir, executar, bloquear ou escalar. Responsabilidade humana não desaparece quando a IA entra no fluxo.</div>
+            </div>
+          </div>
+          <div class="pillar po reveal">
+            <span class="pillar-letter o">O</span>
+            <div>
+              <div class="pillar-name" style="color:var(--yellow)">Otimização</div>
+              <div class="pillar-desc">Sem baseline, métrica e observabilidade, qualquer ganho de IA vira narrativa. O piloto precisa mostrar impacto, qualidade, custo e confiança.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <img src="macro.png" alt="Método MACRO" class="method-image" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TRANSFORMATION ═══════════ -->
+<section id="transform">
+  <div class="container">
+    <div class="transform-header reveal">
+      <span class="tag">Antes e depois</span>
+      <h2 class="section-title">A transformação que a mentoria promove</h2>
+      <p class="section-sub">
+        Você sai do uso improvisado de IA e começa a operar com IA em fluxos reais — com método, contexto, limites e evidência.
+      </p>
+    </div>
+    <div class="transform-table-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>Antes</th>
+            <th class="td-arrow"></th>
+            <th>Depois</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Uso pontual de chat e prompts</td><td class="td-arrow">→</td><td>Operação com IA em fluxo real</td></tr>
+          <tr><td>Conversa improvisada com IA</td><td class="td-arrow">→</td><td>Prompts profissionais e respostas mais previsíveis</td></tr>
+          <tr><td>Empolgação com ferramentas</td><td class="td-arrow">→</td><td>Escolha de arquitetura mínima e proporcional</td></tr>
+          <tr><td>Output rápido sem qualidade clara</td><td class="td-arrow">→</td><td>Critérios de qualidade e revisão documentada</td></tr>
+          <tr><td>Contexto espalhado ou tácito</td><td class="td-arrow">→</td><td>Context Pack operacional reutilizável</td></tr>
+          <tr><td>Ideia abstrata de agente</td><td class="td-arrow">→</td><td>Mini ecossistema agentic com limites e teste</td></tr>
+          <tr><td>Autonomia informal</td><td class="td-arrow">→</td><td>Regência, limites e escalonamento documentados</td></tr>
+          <tr><td>Ganho percebido</td><td class="td-arrow">→</td><td>Métricas e baseline mensuráveis</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ DELIVERABLES ═══════════ -->
+<section id="deliverables">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:52px;">
+      <span class="tag">O que você leva</span>
+      <h2 class="section-title">Dois entregáveis concretos</h2>
+      <p class="section-sub" style="margin:0 auto;">
+        Você não sai apenas com clareza. Sai com artefatos aplicados ao seu fluxo real, prontos para piloto.
+      </p>
+    </div>
+    <div class="deliverables-grid">
+      <div class="del-card blue reveal">
+        <h3>Blueprint Agentic MACRO</h3>
+        <p>Um plano operacional completo aplicado a um fluxo real do seu trabalho, pronto para virar piloto de 2 a 4 semanas.</p>
+        <ul class="del-list">
+          <li>Mapa de oportunidade de IA</li>
+          <li>Decisão de arquitetura mínima</li>
+          <li>Spec de contexto e Context Pack</li>
+          <li>Desenho do agente ou workflow</li>
+          <li>Matriz de autonomia e risco</li>
+          <li>Quality gates e condições de parada</li>
+          <li>Scorecard de experimento</li>
+          <li>Plano de piloto e observabilidade</li>
+        </ul>
+      </div>
+      <div class="del-card cyan reveal">
+        <h3>Mini Ecossistema Agentic</h3>
+        <p>Uma composição prática, simples, testável e governada — não uma plataforma, mas os blocos fundamentais funcionando.</p>
+        <ul class="del-list">
+          <li>Prompt profissional reutilizável</li>
+          <li>Skill simples com instruções de execução</li>
+          <li>Desenho de agente ou workflow</li>
+          <li>Context Pack e RAG simulado</li>
+          <li>MCP Opportunity Map</li>
+          <li>Matriz de permissões</li>
+          <li>Teste documentado com revisão humana</li>
+        </ul>
+      </div>
+      <div class="del-card green reveal">
+        <h3>Capacidade Operacional</h3>
+        <p>Você aprende a fazer — não apenas a entender. Cada encontro produz um artefato aplicado ao seu caso real.</p>
+        <ul class="del-list">
+          <li>Sair do chat improvisado para instrução estruturada</li>
+          <li>Escolher modo de IA proporcional ao risco</li>
+          <li>Criar contexto que reduz ambiguidade</li>
+          <li>Definir onde a IA age e onde o humano decide</li>
+          <li>Medir impacto de verdade</li>
+        </ul>
+      </div>
+      <div class="del-card orange reveal">
+        <h3>Suporte e Acompanhamento</h3>
+        <p>4 semanas de jornada com suporte assíncrono entre os encontros para desbloquear, revisar e orientar.</p>
+        <ul class="del-list">
+          <li>8 encontros síncronos de 2 horas cada</li>
+          <li>16 horas de trabalho aplicado</li>
+          <li>WhatsApp assíncrono entre encontros</li>
+          <li>Revisão de artefatos em andamento</li>
+          <li>Clínica final de apresentação do Blueprint</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ JOURNEY ═══════════ -->
+<section id="journey">
+  <div class="container">
+    <div class="journey-header reveal">
+      <span class="tag">A jornada</span>
+      <h2 class="section-title">8 encontros, 4 semanas</h2>
+      <p class="section-sub">
+        Cada encontro produz um artefato. O caso real é o mesmo do começo ao fim — você não estuda exemplos de outros, você constrói o seu.
+      </p>
+    </div>
+    <div class="journey-grid">
+      <div class="journey-card reveal">
+        <div class="journey-num">Encontro 01</div>
+        <div class="journey-title">De usar IA para operar com IA</div>
+        <div class="journey-output">Entregável: fluxo real escolhido com potencial agentic</div>
+      </div>
+      <div class="journey-card reveal">
+        <div class="journey-num">Encontro 02</div>
+        <div class="journey-title">Mapeamento de oportunidades agentic</div>
+        <div class="journey-output">Entregável: mapa de oportunidade e restrição do fluxo</div>
+      </div>
+      <div class="journey-card reveal">
+        <div class="journey-num">Encontro 03</div>
+        <div class="journey-title">Arquitetura mínima para IA</div>
+        <div class="journey-output">Entregável: decisão de modo de IA e prompt profissional v1</div>
+      </div>
+      <div class="journey-card reveal">
+        <div class="journey-num">Encontro 04</div>
+        <div class="journey-title">Agentes e workflows sem overengineering</div>
+        <div class="journey-output">Entregável: skill simples e desenho de agente ou workflow</div>
+      </div>
+      <div class="journey-card reveal">
+        <div class="journey-num">Encontro 05</div>
+        <div class="journey-title">Contexto como infraestrutura operacional</div>
+        <div class="journey-output">Entregável: Context Pack e RAG simulado</div>
+      </div>
+      <div class="journey-card reveal">
+        <div class="journey-num">Encontro 06</div>
+        <div class="journey-title">Regência, autonomia e MCP</div>
+        <div class="journey-output">Entregável: matriz de permissões e MCP Opportunity Map</div>
+      </div>
+      <div class="journey-card reveal">
+        <div class="journey-num">Encontro 07</div>
+        <div class="journey-title">Otimização e observabilidade</div>
+        <div class="journey-output">Entregável: teste documentado do mini ecossistema agentic</div>
+      </div>
+      <div class="journey-card reveal" style="border-color: rgba(0,149,229,0.3);">
+        <div class="journey-num" style="color:var(--blue)">Encontro 08</div>
+        <div class="journey-title">Clínica final e plano de piloto</div>
+        <div class="journey-output">Entregável: Blueprint final e mini ecossistema agentic demonstrável</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ AUDIENCE ═══════════ -->
+<section id="audience">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:52px;">
+      <span class="tag">Para quem é</span>
+      <h2 class="section-title">Essa mentoria é para você?</h2>
+      <p class="section-sub">
+        A mentoria não é para quem quer aprender IA como tecnologia.
+        É para quem quer IA operando no seu fluxo de trabalho real.
+      </p>
+    </div>
+    <div class="audience-layout">
+      <div class="audience-block yes reveal">
+        <h3>✓ É para você se…</h3>
+        <ul class="audience-list">
+          <li><span class="check">✓</span>Você é PO, PM, Product Ops, Tech Lead, Agile Coach, Scrum Master ou liderança de produto e operações.</li>
+          <li><span class="check">✓</span>Você já usa IA, mas não consegue provar onde ela gera ganho operacional real.</li>
+          <li><span class="check">✓</span>Você quer sair do uso improvisado e criar prompts, skills e contexto que funcionam de forma consistente.</li>
+          <li><span class="check">✓</span>Você quer entender quando usar agente, workflow, RAG ou MCP — e quando uma solução mais simples resolve.</li>
+          <li><span class="check">✓</span>Você quer um Blueprint aplicado ao seu fluxo real, pronto para virar piloto.</li>
+          <li><span class="check">✓</span>Você tem abertura para revisar processo, responsabilidade humana e métricas.</li>
+        </ul>
+      </div>
+      <div class="audience-block no reveal">
+        <h3>✗ Não é para você se…</h3>
+        <ul class="audience-list">
+          <li><span class="cross">✗</span>Você procura apenas uma lista de prompts prontos para copiar e usar.</li>
+          <li><span class="cross">✗</span>Você quer criar agentes por curiosidade técnica, sem fluxo real para trabalhar.</li>
+          <li><span class="cross">✗</span>Você espera uma aula profunda de programação, modelos ou infraestrutura de IA.</li>
+          <li><span class="cross">✗</span>Você não tem abertura para questionar o processo atual e medir impacto.</li>
+          <li><span class="cross">✗</span>Você quer inspiração rápida sem compromisso de aplicação prática.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-header reveal">
+      <span class="tag">Perguntas frequentes</span>
+      <h2 class="section-title">Suas dúvidas respondidas</h2>
+    </div>
+    <div class="faq-grid reveal">
+      <details>
+        <summary>Preciso saber programar ou ter background técnico?</summary>
+        <div class="faq-answer">Não. A mentoria é voltada para profissionais de Produto, Operações e Gestão. Você não vai escrever código — vai aprender a desenhar fluxos, estruturar contexto, criar prompts profissionais, skills e um mini ecossistema agentic simples. O laboratório prático é introdutório e guiado.</div>
+      </details>
+      <details>
+        <summary>Já usamos ChatGPT no nosso time. Ainda faz sentido?</summary>
+        <div class="faq-answer">Sim. Usar ChatGPT é o ponto de partida, não a chegada. A mentoria ajuda a sair do uso individual e construir capacidade operacional compartilhada: contexto reutilizável, prompts consistentes, critérios de qualidade e métricas de impacto. O Método MACRO funciona com qualquer ferramenta de IA.</div>
+      </details>
+      <details>
+        <summary>Não queremos criar agentes. A mentoria ainda se aplica?</summary>
+        <div class="faq-answer">Absolutamente. A mentoria não força agentes. Ela ajuda você a decidir se agente faz sentido ou se uma solução mais simples — como um checklist melhor, um template estruturado ou um prompt profissional — já resolve. Em muitos casos, o melhor resultado é a arquitetura mais simples possível.</div>
+      </details>
+      <details>
+        <summary>Nossa empresa tem restrições de segurança. Isso é um problema?</summary>
+        <div class="faq-answer">Não. A mentoria inclui matriz de permissões, guardrails, fontes proibidas e revisão humana proporcional ao risco. Quando RAG ou MCP não forem adequados ao piloto real, eles são trabalhados como simulações seguras. Segurança é parte do método, não uma limitação.</div>
+      </details>
+      <details>
+        <summary>Como vou provar ROI para a minha liderança?</summary>
+        <div class="faq-answer">O Scorecard de Experimento cria baseline e métricas de impacto, qualidade, custo e confiança antes de qualquer piloto. Você sai da mentoria com evidências observáveis de ganho — não apenas uma impressão de produtividade.</div>
+      </details>
+      <details>
+        <summary>O que é exatamente essa "conversa estratégica gratuita"?</summary>
+        <div class="faq-answer">É uma conversa de 45 minutos onde vamos entender onde você está hoje no uso de IA, qual o seu principal gargalo e que primeiro caminho seria possível. Se fizer sentido para os dois, no final eu te apresento como a mentoria funciona. Não é uma apresentação de vendas — é um diagnóstico real.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ LEAD FORM ═══════════ -->
+<section id="lead">
+  <div class="lead-bg"></div>
+  <div class="container">
+    <div class="lead-inner">
+      <div class="reveal">
+        <span class="tag">Próximo passo</span>
+        <h2 class="section-title">Solicite sua conversa<br><span class="grad-text">estratégica gratuita</span></h2>
+        <p class="section-sub">
+          45 minutos para mapear onde você está, identificar seu principal gargalo no uso de IA e desenhar um primeiro caminho possível.
+        </p>
+      </div>
+      <div class="form-wrap reveal">
+        <form id="leadForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nome completo</label>
+              <input type="text" id="name" name="name" placeholder="Seu nome" required />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail profissional</label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="role">Qual é a sua função hoje?</label>
+            <select id="role" name="role" required>
+              <option value="" disabled selected>Selecione sua função</option>
+              <option>Product Owner</option>
+              <option>Product Manager</option>
+              <option>Product Operations</option>
+              <option>Tech Lead / Engenharia</option>
+              <option>Agile Coach / Scrum Master</option>
+              <option>UX / Product Designer</option>
+              <option>Liderança de Produto ou Tecnologia</option>
+              <option>Dados / IA / Analytics</option>
+              <option>Outra</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="linkedin">LinkedIn (opcional)</label>
+            <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/seuperfil" />
+          </div>
+          <div class="form-group">
+            <label for="challenge">Qual é sua maior dificuldade com IA hoje?</label>
+            <textarea id="challenge" name="challenge" placeholder="Ex: uso ChatGPT mas as respostas não são consistentes, não sei como estruturar contexto, quero criar um agente mas não sei por onde começar..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Quero minha conversa estratégica gratuita →</button>
+          <p class="form-note">Sem spam. Você receberá apenas o contato para agendar a conversa.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="container">
+    <img src="macro-logo.png" alt="Método MACRO" class="footer-logo" />
+    <p class="footer-text">Mentoria Agentic MACRO · Luciano Santos Borges</p>
+    <p class="footer-text" style="margin-top:8px; font-size:11px;">Transformando IA em vantagem operacional.</p>
+  </div>
+</footer>
+
+<script>
+  /* ── Scroll reveal ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* ── Form submit ── */
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = document.querySelector('.form-submit');
+    const data = {
+      name:      document.getElementById('name').value,
+      email:     document.getElementById('email').value,
+      role:      document.getElementById('role').value,
+      linkedin:  document.getElementById('linkedin').value,
+      challenge: document.getElementById('challenge').value,
+    };
+    /* Aqui você pode integrar com Make, Zapier, HubSpot, ou qualquer webhook.
+       Por enquanto, exibe confirmação visual. */
+    btn.textContent = '✓ Solicitação recebida! Entraremos em contato em breve.';
+    btn.style.background = 'var(--green)';
+    btn.disabled = true;
+    console.log('Lead captured:', data);
+  }
+</script>
+</body>
+</html>
