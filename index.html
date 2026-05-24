@@ -433,7 +433,7 @@
         radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,149,229,0.07) 0%, transparent 70%);
     }
     .lead-inner {
-      max-width: 620px;
+      max-width: 900px;
       margin: 0 auto;
       text-align: center;
       position: relative; z-index: 1;
@@ -924,45 +924,12 @@
           45 minutos para mapear onde você está, identificar seu principal gargalo no uso de IA e desenhar um primeiro caminho possível.
         </p>
       </div>
-      <div class="form-wrap reveal">
-        <form id="leadForm" onsubmit="handleSubmit(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Nome completo</label>
-              <input type="text" id="name" name="name" placeholder="Seu nome" required />
-            </div>
-            <div class="form-group">
-              <label for="email">E-mail profissional</label>
-              <input type="email" id="email" name="email" placeholder="seu@email.com" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="role">Qual é a sua função hoje?</label>
-            <select id="role" name="role" required>
-              <option value="" disabled selected>Selecione sua função</option>
-              <option>Product Owner</option>
-              <option>Product Manager</option>
-              <option>Product Operations</option>
-              <option>Tech Lead / Engenharia</option>
-              <option>Agile Coach / Scrum Master</option>
-              <option>UX / Product Designer</option>
-              <option>Liderança de Produto ou Tecnologia</option>
-              <option>Dados / IA / Analytics</option>
-              <option>Outra</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="linkedin">LinkedIn (opcional)</label>
-            <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/seuperfil" />
-          </div>
-          <div class="form-group">
-            <label for="challenge">Qual é sua maior dificuldade com IA hoje?</label>
-            <textarea id="challenge" name="challenge" placeholder="Ex: uso ChatGPT mas as respostas não são consistentes, não sei como estruturar contexto, quero criar um agente mas não sei por onde começar..."></textarea>
-          </div>
-          <button type="submit" class="form-submit">Quero minha conversa estratégica gratuita →</button>
-          <p class="form-note">Sem spam. Você receberá apenas o contato para agendar a conversa.</p>
-        </form>
-      </div>
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget reveal"
+           data-url="https://calendly.com/lucianosantosborges/conversa-estrategica?background_color=111111&text_color=ffffff&primary_color=0095E5"
+           style="min-width:320px; height:700px; border-radius:16px; overflow:hidden;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- Calendly inline widget end -->
     </div>
   </div>
 </section>
@@ -994,24 +961,7 @@
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  /* ── Form submit ── */
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = document.querySelector('.form-submit');
-    const data = {
-      name:      document.getElementById('name').value,
-      email:     document.getElementById('email').value,
-      role:      document.getElementById('role').value,
-      linkedin:  document.getElementById('linkedin').value,
-      challenge: document.getElementById('challenge').value,
-    };
-    /* Aqui você pode integrar com Make, Zapier, HubSpot, ou qualquer webhook.
-       Por enquanto, exibe confirmação visual. */
-    btn.textContent = '✓ Solicitação recebida! Entraremos em contato em breve.';
-    btn.style.background = 'var(--green)';
-    btn.disabled = true;
-    console.log('Lead captured:', data);
-  }
+
 </script>
 </body>
 </html>
