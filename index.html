@@ -45,6 +45,9 @@
   <meta name="twitter:title"       content="Mentoria Agentic MACRO — Transforme IA em Vantagem Operacional" />
   <meta name="twitter:description" content="Aprenda a transformar IA em vantagem operacional real com o Método MACRO. 8 encontros, 4 semanas, 1 Blueprint aplicado ao seu fluxo de trabalho." />
   <meta name="twitter:image"       content="https://lusabo.github.io/ia-vantagem-operacional/capa.png" />
+  <meta name="description"         content="Você usa IA, mas ainda não consegue provar onde ela ajuda? Em 45 minutos analisamos onde a IA pode virar ganho operacional real no seu fluxo de trabalho." />
+  <link rel="canonical"            href="https://lusabo.github.io/ia-vantagem-operacional/" />
+  <link rel="icon"                 type="image/png" href="macro-logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -76,7 +79,7 @@
       overflow-x: hidden;
     }
     a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
+    img { display: block; max-width: 100%; height: auto; }
 
     /* ─── UTILITIES ─── */
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
@@ -845,7 +848,7 @@
       border-top: 1px solid var(--border);
       text-align: center;
     }
-    .footer-logo { height: 28px; margin: 0 auto 16px; }
+    .footer-logo { height: 28px; width: auto; margin: 0 auto 16px; }
     .footer-text { font-size: 13px; color: var(--muted); }
     .footer-links {
       display: flex;
@@ -863,6 +866,7 @@
     }
     .footer-links a:hover,
     .footer-links a:focus { color: var(--white); }
+    .footer-text + .footer-text { margin-top: 8px; font-size: 11px; }
     .mobile-sticky-cta { display: none; }
 
     /* ─── RESPONSIVE ─── */
@@ -884,6 +888,11 @@
       #about, #why-one, #audience { padding: 56px 0; }
       #proof { padding: 32px 0 56px; }
       .pain-header, .transform-header, .why-header, .faq-header, .journey-header { margin-bottom: 40px; }
+      .deliverables-grid.del-3col { grid-template-columns: 1fr; }
+      .conversa-steps { grid-template-columns: 1fr; }
+      .conversa-arrow { display: none; }
+      .about-compact { grid-template-columns: 1fr; gap: 40px; }
+      .about-compact-photo .about-photo-frame { max-width: 200px; }
       .mobile-sticky-cta {
         display: inline-flex;
         align-items: center;
@@ -936,6 +945,7 @@
       margin-bottom: 32px;
     }
     .scarcity-badge strong { color: var(--orange); font-weight: 700; }
+    .scarcity-badge .exclusivity-dot { font-size: 11px; }
 
     /* ─── SCROLL ANIMATION ─── */
     .reveal {
@@ -963,6 +973,23 @@
     .mb-section { margin-bottom: 52px; }
     .transform-cta { text-align: center; margin-top: 60px; }
     .transform-cta-text { font-size: 16px; color: var(--light); margin-bottom: 24px; }
+    .hero-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+    .hero-bullets li { font-size: 15px; color: var(--light); display: flex; align-items: center; gap: 10px; }
+    .hero-bullets li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; }
+    .method-intro { list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-direction: column; gap: 10px; }
+    .method-intro li { font-size: 15px; color: var(--light); display: flex; align-items: center; gap: 10px; }
+    .method-intro li::before { content: "✓"; color: var(--cyan); font-weight: 700; flex-shrink: 0; }
+    .pain-close { text-align: center; margin-top: 52px; padding: 32px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); }
+    .pain-close p { font-size: clamp(18px, 2.5vw, 22px); font-weight: 700; color: var(--white); line-height: 1.55; }
+    .deliverables-grid.del-3col { grid-template-columns: repeat(3, 1fr); }
+    .about-compact { display: grid; grid-template-columns: 260px 1fr; gap: 60px; align-items: center; }
+    .about-compact-photo .about-photo-frame { max-width: 260px; }
+    .conversa-steps { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 24px; align-items: start; margin-top: 60px; }
+    .conversa-step { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 36px; }
+    .conversa-num { font-size: 11px; font-weight: 700; color: var(--blue); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+    .conversa-step h3 { font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+    .conversa-step p { font-size: 15px; color: var(--light); line-height: 1.65; }
+    .conversa-arrow { font-size: 20px; color: var(--muted); padding-top: 40px; align-self: start; }
 
     /* ─── CONSENT BANNER ─── */
     #consent-banner {
@@ -1029,17 +1056,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <!-- ═══════════ NAV ═══════════ -->
-<nav>
+<nav aria-label="Principal">
   <div class="nav-inner">
-    <img src="macro-logo.png" alt="Método MACRO" class="nav-logo" />
-    <div class="nav-links">
-      <a href="#proof" class="nav-link">O Que Sai Pronto</a>
-      <a href="#method" class="nav-link">O Método</a>
-      <a href="#faq" class="nav-link">FAQ</a>
-    </div>
-    <a href="#lead" class="btn-nav">Falar com o Luciano</a>
+    <img src="macro-logo.png" alt="Método MACRO" class="nav-logo" width="1536" height="1024" />
+    <div class="nav-links"></div>
+    <a href="#lead" class="btn-nav">Agendar conversa</a>
   </div>
 </nav>
+
+<main id="main-content">
 
 <!-- ═══════════ HERO ═══════════ -->
 <section id="hero">
@@ -1047,91 +1072,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="hero-grid">
       <div class="hero-content">
-        <p class="hero-eyebrow">Mentoria 1:1 para produto, operações e gestão</p>
+        <p class="hero-eyebrow">Diagnóstico gratuito · 45 minutos · 1:1</p>
         <h1 class="hero-title">
-          Transforme o uso solto de <span class="grad-text">IA</span><br>
-          em vantagem operacional real.
+          Você usa IA.<br>
+          Mas ainda não consegue provar onde ela ajuda.
         </h1>
         <p class="hero-sub">
-          Em 4 semanas, com método, contexto e métricas, você aplica IA no seu próprio fluxo de trabalho — e sai com um Blueprint pronto para virar piloto.
+          Em 45 minutos, analisamos juntos onde a IA pode parar de ser enfeite e começar a virar ganho operacional no seu fluxo real.
         </p>
         <div class="hero-cta-row">
-          <a href="#lead" class="btn-primary">Conversar 45 min sobre meu caso</a>
+          <a href="#lead" class="btn-primary">Agendar a conversa gratuita</a>
           <a href="macro.pdf" class="btn-secondary" download>↓ Baixar o e-book do Método MACRO</a>
         </div>
         <p class="exclusivity-line">
           <span class="exclusivity-dot">●</span>
-          Mentoria 1:1 · <strong>apenas 2 participantes por mês</strong> — exclusividade garantida
+          Atendimento exclusivo 1:1
         </p>
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-num grad-text">16h</span>
-            <span class="stat-label">De trabalho no seu caso real</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num grad-text">2</span>
-            <span class="stat-label">Entregáveis prontos para piloto</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num grad-text">1</span>
-            <span class="stat-label">Fluxo real com IA operando</span>
-          </div>
-        </div>
       </div>
       <div class="hero-image-wrap">
         <div class="hero-image-bg"></div>
-        <img src="capa.png" alt="Mentoria Agentic MACRO — Transformando IA em Vantagem Operacional" class="hero-image" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ AUTHORITY STRIP ═══════════ -->
-<section id="authority-strip">
-  <div class="container">
-    <div class="auth-strip reveal">
-      <div class="auth-strip-photo">
-        <img src="foto.png" alt="Luciano Santos Borges" loading="lazy" />
-      </div>
-      <div class="auth-strip-info">
-        <p class="auth-strip-name">Mentoria conduzida por <strong>Luciano Santos Borges</strong></p>
-        <p class="auth-strip-role">20+ anos em tech · Product Owner · Especialização em IA · Criador do Método MACRO</p>
-      </div>
-      <a href="#about" class="auth-strip-link">Conhecer o Luciano →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ PROOF ═══════════ -->
-<section id="proof">
-  <div class="container">
-    <div class="proof-shell reveal">
-      <div class="proof-head">
-        <div>
-          <span class="tag">O que sai pronto</span>
-          <h2 class="section-title">Você não sai com teoria.<br>Sai com ativos para <span class="grad-text">colocar IA em operação</span>.</h2>
-          <p class="section-sub">A mentoria transforma um problema real do seu trabalho em uma solução mínima, governada e pronta para piloto.</p>
-        </div>
-        <div class="proof-note">
-          <strong>Esse é o ponto central da oferta:</strong> a jornada não termina em benchmark, inspiração ou coleção de prompts. Ela termina com decisão, artefato e plano de execução no seu caso real.
-        </div>
-      </div>
-      <div class="proof-grid">
-        <div class="proof-card">
-          <div class="proof-kicker">Entregável 01</div>
-          <h3>Blueprint Agentic MACRO aplicado ao seu fluxo</h3>
-          <p>Mapa de oportunidade, arquitetura mínima, contexto, limites de autonomia, quality gates, métricas e plano de piloto reunidos em um único artefato.</p>
-        </div>
-        <div class="proof-card">
-          <div class="proof-kicker">Entregável 02</div>
-          <h3>Mini ecossistema agentic simples e testável</h3>
-          <p>Prompt profissional, skill simples, desenho de agente ou workflow, contexto operacional e teste documentado com revisão humana.</p>
-        </div>
-        <div class="proof-card">
-          <div class="proof-kicker">Resultado prático</div>
-          <h3>Um piloto possível para as próximas 2 a 4 semanas</h3>
-          <p>Você sai com clareza sobre onde IA gera valor, o que ainda não deve automatizar e como medir impacto sem overengineering.</p>
-        </div>
+        <img src="capa.png" alt="Mentoria Agentic MACRO — Transformando IA em Vantagem Operacional" class="hero-image" width="1054" height="1492" />
       </div>
     </div>
   </div>
@@ -1142,42 +1102,59 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="pain-header reveal">
       <span class="tag">O problema</span>
-      <h2 class="section-title">Você reconhece alguma dessas situações?</h2>
+      <h2 class="section-title">Você usa IA. Mas ainda não opera com ela.</h2>
       <p class="section-sub">
-        Muitos profissionais já usam IA, mas continuam presos nos mesmos problemas.
-        A IA aumenta o output, mas o fluxo não melhora.
+        Existe uma diferença entre conversar com IA e ter IA funcionando no seu fluxo de trabalho.
       </p>
     </div>
     <div class="pain-grid">
       <div class="pain-card reveal">
         <span class="pain-icon">⚡</span>
-        <h3>Prompts soltos sem contexto</h3>
-        <p>Você copia e cola perguntas genéricas e recebe respostas boas hoje, ruins amanhã. Não há consistência nem reutilização.</p>
-      </div>
-      <div class="pain-card reveal">
-        <span class="pain-icon">🔄</span>
-        <h3>IA que acelera o retrabalho</h3>
-        <p>Mais output não significa menos retrabalho. O fluxo ainda quebra no mesmo ponto, só com mais velocidade.</p>
+        <h3>Você consegue resultados bons hoje e ruins amanhã</h3>
+        <p>Sem consistência e sem contexto reutilizável — cada resultado depende de quanto você se lembra do que funcionou da última vez.</p>
       </div>
       <div class="pain-card reveal">
         <span class="pain-icon">🌫️</span>
-        <h3>Contexto espalhado em todo lugar</h3>
-        <p>Decisões em reuniões, regras em mensagens, exemplos na cabeça do especialista. A IA opera no escuro.</p>
+        <h3>A IA trabalha sem enxergar o cenário completo</h3>
+        <p>Decisões em reuniões, regras em mensagens, exemplos na cabeça do especialista. A IA opera no escuro e o resultado mostra isso.</p>
       </div>
       <div class="pain-card reveal">
         <span class="pain-icon">📊</span>
-        <h3>Sem evidência de impacto real</h3>
-        <p>Você sente que está sendo mais produtivo, mas não consegue provar onde a IA reduziu tempo, custo ou erro.</p>
+        <h3>Você sente ganho, mas não consegue provar resultado</h3>
+        <p>Sem baseline e sem métricas, qualquer melhoria vira opinião. Impossível justificar investimento ou escalar o que funcionou.</p>
       </div>
-      <div class="pain-card reveal">
-        <span class="pain-icon">🤖</span>
-        <h3>Empolgação com agentes sem uso real</h3>
-        <p>Você ouve falar em agentes, RAG, MCP, workflows inteligentes — mas não sabe como isso entra no seu fluxo real.</p>
+    </div>
+    <div class="pain-close reveal">
+      <p>O problema normalmente não é IA.<br>É tentar encaixar IA em processos que nunca foram desenhados para ela.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CONVERSA ═══════════ -->
+<section id="conversa">
+  <div class="container">
+    <div class="reveal section-center">
+      <span class="tag">Em 45 minutos</span>
+      <h2 class="section-title">O que acontece na conversa</h2>
+      <p class="section-sub">Sem apresentação de slides.<br>Uma análise direta do seu caso.</p>
+    </div>
+    <div class="conversa-steps">
+      <div class="conversa-step reveal">
+        <div class="conversa-num">01</div>
+        <h3>Você traz</h3>
+        <p>Seu contexto atual, como você usa IA hoje, e o principal gargalo que quer resolver.</p>
       </div>
-      <div class="pain-card reveal">
-        <span class="pain-icon">🎭</span>
-        <h3>Teatro de produtividade</h3>
-        <p>Bonito no LinkedIn. Fraco no resultado. A IA virou uma camada sobre um processo ainda confuso e manual.</p>
+      <div class="conversa-arrow">→</div>
+      <div class="conversa-step reveal">
+        <div class="conversa-num">02</div>
+        <h3>A gente analisa</h3>
+        <p>Onde existe desperdício real, qual seria o menor passo possível com IA, e o que ainda deve ficar sob decisão humana.</p>
+      </div>
+      <div class="conversa-arrow">→</div>
+      <div class="conversa-step reveal">
+        <div class="conversa-num">03</div>
+        <h3>Você leva</h3>
+        <p>Clareza sobre onde atacar primeiro, um critério de priorização e a visão do próximo passo real para o seu caso.</p>
       </div>
     </div>
   </div>
@@ -1186,336 +1163,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ═══════════ ABOUT ═══════════ -->
 <section id="about">
   <div class="container">
-    <div class="about-layout">
-
-      <div class="reveal">
+    <div class="about-compact reveal">
+      <div class="about-compact-photo">
         <div class="about-photo-frame">
-          <img src="foto.png" alt="Luciano Santos Borges" class="about-photo" loading="lazy" />
-        </div>
-        <div class="about-creds">
-          <span class="about-cred">20+ anos em tech</span>
-          <span class="about-cred">Ciência da Computação</span>
-          <span class="about-cred">MBA Gestão de Negócios</span>
-          <span class="about-cred">Especialização em IA</span>
-
+          <img src="foto.png" alt="Luciano Santos Borges" class="about-photo" loading="lazy" width="1122" height="1402" />
         </div>
       </div>
-
-      <div class="reveal">
-        <span class="tag">Quem conduz a mentoria</span>
+      <div class="about-compact-content">
+        <span class="tag">Quem conduz a conversa</span>
         <h2 class="section-title">Luciano <span class="grad-text">Borges</span></h2>
-        <p class="about-role">Transformo IA em Vantagem Operacional</p>
+        <div class="about-creds">
+          <span class="about-cred">20+ anos em tecnologia</span>
+          <span class="about-cred">Product Owner</span>
+          <span class="about-cred">Especialização em IA</span>
+          <span class="about-cred">Criador do Método MACRO</span>
+        </div>
         <blockquote class="about-quote">
-          &ldquo;A IA não resolve um processo mal definido.<br>Ela apenas acelera os seus efeitos.&rdquo;
+          &ldquo;IA não resolve processos ruins.<br>Ela acelera seus efeitos.&rdquo;
         </blockquote>
-        <p class="about-text">
-          Trabalho na interseção onde Produto, Engenharia de Software, Agilidade e Inteligência Artificial se encontram.
-          Com mais de 20 anos de trajetória em tecnologia — como Engenheiro de Software, Arquiteto de Soluções,
-          Scrum Master, Professor Universitário e hoje Product Owner no setor de tecnologia —, desenvolvi uma visão
-          direta sobre a transformação digital atual.
-        </p>
-        <p class="about-text">
-          No cenário onde times geram código, protótipos e análises em velocidade recorde, o verdadeiro diferencial
-          não é automatizar — é saber o que e como validar. Minha missão é ajudar profissionais e times de Produto
-          e Engenharia a usar IA como vantagem operacional real: mais produtividade, discovery mais rápido e entrega
-          mais previsível, sem abrir mão de governança, clareza de problema e qualidade técnica.
-        </p>
+        <a href="#lead" class="btn-primary">Agendar a conversa gratuita</a>
       </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ METHOD ═══════════ -->
-<section id="method">
-  <div class="container">
-    <div class="method-layout">
-      <div>
-        <div class="reveal">
-          <span class="tag">O método</span>
-          <h2 class="section-title">O Método <span class="grad-text">MACRO</span></h2>
-          <p class="section-sub">
-            O MACRO organiza o trabalho antes da automação: onde existe desperdício real,
-            qual a menor arquitetura suficiente, que contexto a IA precisa, quais limites humanos entram e como medir resultado.
-          </p>
-        </div>
-        <div class="method-pillars">
-          <div class="pillar pm reveal">
-            <span class="pillar-letter m">M</span>
-            <div>
-              <div class="pillar-name">Mapeamento</div>
-              <div class="pillar-desc">Identifica desperdícios reais no fluxo antes de qualquer ferramenta. Não começa por IA — começa por onde o trabalho perde inteligência, tempo ou qualidade.</div>
-            </div>
-          </div>
-          <div class="pillar pa reveal">
-            <span class="pillar-letter a">A</span>
-            <div>
-              <div class="pillar-name">Arquitetura</div>
-              <div class="pillar-desc">Escolhe a menor solução capaz de resolver o problema com confiança. Checklist? Template? Workflow? Agente? Multiagente? A maturidade certa para cada caso.</div>
-            </div>
-          </div>
-          <div class="pillar pc reveal">
-            <span class="pillar-letter c">C</span>
-            <div>
-              <div class="pillar-name">Contexto</div>
-              <div class="pillar-desc">Prompt é porta de entrada. Contexto é infraestrutura. Transforma regras, exemplos e fontes em Context Pack operacional e RAG simulado reutilizável.</div>
-            </div>
-          </div>
-          <div class="pillar pr reveal">
-            <span class="pillar-letter r">R</span>
-            <div>
-              <div class="pillar-name">Regência</div>
-              <div class="pillar-desc">Define o que a IA pode sugerir, executar, bloquear ou escalar. Responsabilidade humana não desaparece quando a IA entra no fluxo.</div>
-            </div>
-          </div>
-          <div class="pillar po reveal">
-            <span class="pillar-letter o">O</span>
-            <div>
-              <div class="pillar-name">Otimização</div>
-              <div class="pillar-desc">Sem baseline, métrica e observabilidade, qualquer ganho de IA vira narrativa. O piloto precisa mostrar impacto, qualidade, custo e confiança.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal">
-        <img src="macro.png" alt="Método MACRO" class="method-image" loading="lazy" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ TRANSFORMATION ═══════════ -->
-<section id="transform">
-  <div class="container">
-    <div class="transform-header reveal">
-      <span class="tag">Antes e depois</span>
-      <h2 class="section-title">A transformação que a mentoria promove</h2>
-      <p class="section-sub">
-        Você sai do uso improvisado de IA e começa a operar com IA em fluxos reais — com método, contexto, limites e evidência.
-      </p>
-    </div>
-    <div class="transform-table-wrap reveal">
-      <table>
-        <thead>
-          <tr>
-            <th>Antes</th>
-            <th class="td-arrow"></th>
-            <th>Depois</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Uso pontual de chat e prompts</td><td class="td-arrow">→</td><td>Operação com IA em fluxo real</td></tr>
-          <tr><td>Conversa improvisada com IA</td><td class="td-arrow">→</td><td>Prompts profissionais e respostas mais previsíveis</td></tr>
-          <tr><td>Empolgação com ferramentas</td><td class="td-arrow">→</td><td>Escolha de arquitetura mínima e proporcional</td></tr>
-          <tr><td>Output rápido sem qualidade clara</td><td class="td-arrow">→</td><td>Critérios de qualidade e revisão documentada</td></tr>
-          <tr><td>Contexto espalhado ou tácito</td><td class="td-arrow">→</td><td>Context Pack operacional reutilizável</td></tr>
-          <tr><td>Ideia abstrata de agente</td><td class="td-arrow">→</td><td>Mini ecossistema agentic com limites e teste</td></tr>
-          <tr><td>Autonomia informal</td><td class="td-arrow">→</td><td>Regência, limites e escalonamento documentados</td></tr>
-          <tr><td>Ganho percebido</td><td class="td-arrow">→</td><td>Métricas e baseline mensuráveis</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="reveal transform-cta">
-      <p class="transform-cta-text">Sua IA está acelerando o trabalho — mas o resultado ainda é difuso?</p>
-      <a href="#lead" class="btn-primary">Conversar 45 min sobre meu caso</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ DELIVERABLES ═══════════ -->
-<section id="deliverables">
-  <div class="container">
-    <div class="reveal section-center">
-      <span class="tag">O que você leva</span>
-      <h2 class="section-title">O que você constrói ao longo da mentoria</h2>
-      <p class="section-sub">
-        Não é um curso de ferramenta. Cada bloco abaixo existe para transformar um caso real do seu trabalho em uma operação mais clara, governada e mensurável.
-      </p>
-    </div>
-    <div class="deliverables-grid">
-      <div class="del-card blue reveal">
-        <h3>Blueprint Agentic MACRO</h3>
-        <p>Um plano operacional completo aplicado a um fluxo real do seu trabalho, pronto para virar piloto de 2 a 4 semanas.</p>
-        <ul class="del-list">
-          <li>Mapa de oportunidade de IA</li>
-          <li>Decisão de arquitetura mínima</li>
-          <li>Spec de contexto e Context Pack</li>
-          <li>Desenho do agente ou workflow</li>
-          <li>Matriz de autonomia e risco</li>
-          <li>Quality gates e condições de parada</li>
-          <li>Scorecard de experimento</li>
-          <li>Plano de piloto e observabilidade</li>
-        </ul>
-      </div>
-      <div class="del-card cyan reveal">
-        <h3>Mini Ecossistema Agentic</h3>
-        <p>Uma composição prática, simples, testável e governada — não uma plataforma, mas os blocos fundamentais funcionando.</p>
-        <ul class="del-list">
-          <li>Prompt profissional reutilizável</li>
-          <li>Skill simples com instruções de execução</li>
-          <li>Desenho de agente ou workflow</li>
-          <li>Context Pack e RAG simulado</li>
-          <li>MCP Opportunity Map</li>
-          <li>Matriz de permissões</li>
-          <li>Teste documentado com revisão humana</li>
-        </ul>
-      </div>
-      <div class="del-card green reveal">
-        <h3>Capacidade Operacional</h3>
-        <p>Você aprende a fazer — não apenas a entender. Cada encontro produz um artefato aplicado ao seu caso real.</p>
-        <ul class="del-list">
-          <li>Sair do chat improvisado para instrução estruturada</li>
-          <li>Escolher modo de IA proporcional ao risco</li>
-          <li>Criar contexto que reduz ambiguidade</li>
-          <li>Definir onde a IA age e onde o humano decide</li>
-          <li>Medir impacto de verdade</li>
-        </ul>
-      </div>
-      <div class="del-card orange reveal">
-        <h3>Suporte e Acompanhamento</h3>
-        <p>4 semanas de jornada com suporte assíncrono entre os encontros para desbloquear, revisar e orientar.</p>
-        <ul class="del-list">
-          <li>8 encontros síncronos de 2 horas cada</li>
-          <li>16 horas de trabalho aplicado</li>
-          <li>WhatsApp assíncrono entre encontros</li>
-          <li>Revisão de artefatos em andamento</li>
-          <li>Clínica final de apresentação do Blueprint</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ WHY 1:1 ═══════════ -->
-<section id="why-one">
-  <div class="container">
-    <div class="why-header reveal">
-      <span class="tag">Por que 1:1</span>
-      <h2 class="section-title">Essa mentoria atende só <span class="grad-text">2 pessoas por mês</span> por um motivo.</h2>
-      <p class="section-sub">O valor da jornada não está em assistir conteúdo. Está em desenhar uma solução proporcional ao seu contexto, revisar artefatos e tomar decisões sobre um fluxo real.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-card reveal">
-        <h3>Seu fluxo real vira o centro da mentoria</h3>
-        <p>Cada encontro trabalha o seu caso, com as restrições, ambiguidade, dependências e trade-offs que já existem no seu ambiente de trabalho.</p>
-      </div>
-      <div class="why-card reveal">
-        <h3>Os artefatos são refinados com profundidade</h3>
-        <p>Blueprint, contexto, prompt, skill, workflow e plano de piloto não saem de template genérico. Eles são ajustados à sua realidade para reduzir risco e retrabalho.</p>
-      </div>
-      <div class="why-card reveal">
-        <h3>A exclusividade protege qualidade, não cria hype</h3>
-        <p>Limitar a agenda a 2 participantes por mês permite acompanhamento próximo, suporte assíncrono útil e mais precisão na tomada de decisão durante a jornada.</p>
-      </div>
-    </div>
-    <p class="why-close reveal">Se você procura escala de conteúdo, grupo grande ou coleção de prompts, essa não é a melhor oferta. Se você quer aplicar IA com responsabilidade em um fluxo real, o formato 1:1 faz diferença.</p>
-  </div>
-</section>
-
-<!-- ═══════════ JOURNEY ═══════════ -->
-<section id="journey">
-  <div class="container">
-    <div class="journey-header reveal">
-      <span class="tag">A jornada</span>
-      <h2 class="section-title">4 fases, 8 encontros</h2>
-      <p class="section-sub">
-        Em vez de listar oito aulas isoladas, a mentoria organiza o trabalho em quatro fases que conduzem do diagnóstico ao piloto com evidência.
-      </p>
-    </div>
-    <div class="journey-grid">
-      <div class="journey-card phase-1 reveal">
-        <div class="journey-num">Fase 01 · Encontros 1 e 2</div>
-        <div class="journey-title">Diagnóstico e priorização da oportunidade</div>
-        <div class="journey-output">Saída: fluxo real escolhido, desperdício mapeado e oportunidade de IA priorizada com critério.</div>
-      </div>
-      <div class="journey-card phase-2 reveal">
-        <div class="journey-num">Fase 02 · Encontros 3 e 4</div>
-        <div class="journey-title">Desenho da solução mínima</div>
-        <div class="journey-output">Saída: arquitetura proporcional, prompt profissional e desenho do skill, workflow ou agente quando fizer sentido.</div>
-      </div>
-      <div class="journey-card phase-3 reveal">
-        <div class="journey-num">Fase 03 · Encontros 5 e 6</div>
-        <div class="journey-title">Contexto, regência e segurança operacional</div>
-        <div class="journey-output">Saída: Context Pack, limites de autonomia, permissões, quality gates e mapa de oportunidades de integração.</div>
-      </div>
-      <div class="journey-card phase-4 reveal">
-        <div class="journey-num">Fase 04 · Encontros 7 e 8</div>
-        <div class="journey-title">Teste, observabilidade e plano de piloto</div>
-        <div class="journey-output">Saída: Blueprint final, mini ecossistema validado, scorecard e decisão clara para as próximas 2 a 4 semanas.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ AUDIENCE ═══════════ -->
-<section id="audience">
-  <div class="container">
-    <div class="reveal mb-section">
-      <span class="tag">Para quem é</span>
-      <h2 class="section-title">Essa mentoria é para você?</h2>
-      <p class="section-sub">
-        A mentoria não é para quem quer aprender IA como tecnologia.
-        É para quem quer IA operando no seu fluxo de trabalho real.
-      </p>
-    </div>
-    <div class="audience-layout">
-      <div class="audience-block yes reveal">
-        <h3>✓ É para você se…</h3>
-        <ul class="audience-list">
-          <li><span class="check">✓</span>Você é PO, PM, Product Ops, Tech Lead, Agile Coach, Scrum Master ou liderança de produto e operações.</li>
-          <li><span class="check">✓</span>Você já usa IA, mas não consegue provar onde ela gera ganho operacional real.</li>
-          <li><span class="check">✓</span>Você quer sair do uso improvisado e criar prompts, skills e contexto que funcionam de forma consistente.</li>
-          <li><span class="check">✓</span>Você quer entender quando usar agente, workflow, RAG ou MCP — e quando uma solução mais simples resolve.</li>
-          <li><span class="check">✓</span>Você quer um Blueprint aplicado ao seu fluxo real, pronto para virar piloto.</li>
-          <li><span class="check">✓</span>Você tem abertura para revisar processo, responsabilidade humana e métricas.</li>
-        </ul>
-      </div>
-      <div class="audience-block no reveal">
-        <h3>✗ Não é para você se…</h3>
-        <ul class="audience-list">
-          <li><span class="cross">✗</span>Você procura apenas uma lista de prompts prontos para copiar e usar.</li>
-          <li><span class="cross">✗</span>Você quer criar agentes por curiosidade técnica, sem fluxo real para trabalhar.</li>
-          <li><span class="cross">✗</span>Você espera uma aula profunda de programação, modelos ou infraestrutura de IA.</li>
-          <li><span class="cross">✗</span>Você não tem abertura para questionar o processo atual e medir impacto.</li>
-          <li><span class="cross">✗</span>Você quer inspiração rápida sem compromisso de aplicação prática.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ FAQ ═══════════ -->
-<section id="faq">
-  <div class="container">
-    <div class="faq-header reveal">
-      <span class="tag">Perguntas frequentes</span>
-      <h2 class="section-title">Suas dúvidas respondidas</h2>
-    </div>
-    <div class="faq-grid reveal">
-      <details>
-        <summary>Preciso saber programar ou ter background técnico?</summary>
-        <div class="faq-answer">Não. A mentoria é voltada para profissionais de Produto, Operações e Gestão. Você não vai escrever código — vai aprender a desenhar fluxos, estruturar contexto, criar prompts profissionais, skills e um mini ecossistema agentic simples. O laboratório prático é introdutório e guiado.</div>
-      </details>
-      <details>
-        <summary>Já usamos ChatGPT no nosso time. Ainda faz sentido?</summary>
-        <div class="faq-answer">Sim. Usar ChatGPT é o ponto de partida, não a chegada. A mentoria ajuda a sair do uso individual e construir capacidade operacional compartilhada: contexto reutilizável, prompts consistentes, critérios de qualidade e métricas de impacto. O Método MACRO funciona com qualquer ferramenta de IA.</div>
-      </details>
-      <details>
-        <summary>Não queremos criar agentes. A mentoria ainda se aplica?</summary>
-        <div class="faq-answer">Absolutamente. A mentoria não força agentes. Ela ajuda você a decidir se agente faz sentido ou se uma solução mais simples — como um checklist melhor, um template estruturado ou um prompt profissional — já resolve. Em muitos casos, o melhor resultado é a arquitetura mais simples possível.</div>
-      </details>
-      <details>
-        <summary>Nossa empresa tem restrições de segurança. Isso é um problema?</summary>
-        <div class="faq-answer">Não. A mentoria inclui matriz de permissões, guardrails, fontes proibidas e revisão humana proporcional ao risco. Quando RAG ou MCP não forem adequados ao piloto real, eles são trabalhados como simulações seguras. Segurança é parte do método, não uma limitação.</div>
-      </details>
-      <details>
-        <summary>Como vou provar ROI para a minha liderança?</summary>
-        <div class="faq-answer">O Scorecard de Experimento cria baseline e métricas de impacto, qualidade, custo e confiança antes de qualquer piloto. Você sai da mentoria com evidências observáveis de ganho — não apenas uma impressão de produtividade.</div>
-      </details>
-      <details>
-        <summary>O que é exatamente essa "conversa estratégica gratuita"?</summary>
-        <div class="faq-answer">É uma conversa de 45 minutos onde vamos entender onde você está hoje no uso de IA, qual o seu principal gargalo e que primeiro caminho seria possível. Se fizer sentido para os dois, no final eu te apresento como a mentoria funciona. Não é uma apresentação de vendas — é um diagnóstico real.</div>
-      </details>
     </div>
   </div>
 </section>
@@ -1527,40 +1194,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="lead-inner">
       <div class="reveal">
         <span class="tag">Próximo passo</span>
-        <h2 class="section-title">Uma conversa de 45 min<br>sobre <span class="grad-text">o seu caso</span></h2>
+        <h2 class="section-title">Agende uma conversa de <span class="grad-text">45 minutos</span></h2>
         <p class="section-sub">
-          O objetivo é entender onde IA já entra no seu trabalho, identificar o principal gargalo operacional e avaliar se faz sentido transformar isso em um piloto real.
+          Uma análise direta do seu caso — e clareza sobre onde a IA pode começar a gerar ganho real no seu fluxo de trabalho.
         </p>
       </div>
-      <div class="lead-decision-grid reveal">
-        <div class="lead-card">
-          <h3>Essa conversa faz sentido se...</h3>
-          <ul class="lead-list">
-            <li>você já usa IA, mas ainda não consegue provar ganho operacional;</li>
-            <li>há um fluxo real que precisa de mais clareza, contexto e governança;</li>
-            <li>você quer decidir com critério se agente, workflow ou solução simples resolve.</li>
-          </ul>
-        </div>
-        <div class="lead-card">
-          <h3>Você sai da conversa com...</h3>
-          <ul class="lead-list">
-            <li>um diagnóstico inicial do seu cenário atual;</li>
-            <li>o principal gargalo priorizado para atacar primeiro;</li>
-            <li>uma visão inicial do melhor próximo passo para o seu caso.</li>
-          </ul>
-        </div>
-        <div class="lead-card">
-          <h3>Antes de agendar, venha com...</h3>
-          <ul class="lead-list">
-            <li>seu cargo ou contexto de atuação;</li>
-            <li>um fluxo específico que você quer melhorar com IA;</li>
-            <li>uma noção breve de como você usa IA hoje.</li>
-          </ul>
-        </div>
-      </div>
       <div class="scarcity-badge reveal">
-        <span class="exclusivity-dot" style="font-size:11px;">●</span>
-        Atendimento exclusivo 1:1 — <strong>apenas 2 vagas disponíveis por mês</strong>
+        <span class="exclusivity-dot">●</span>
+        Atendimento exclusivo 1:1
       </div>
       <!-- Calendly inline widget begin -->
       <div class="calendly-inline-widget reveal"
@@ -1573,12 +1214,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+</main>
+
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer>
   <div class="container">
-    <img src="macro-logo.png" alt="Método MACRO" class="footer-logo" />
+    <img src="macro-logo.png" alt="Método MACRO" class="footer-logo" width="1536" height="1024" />
     <p class="footer-text">Mentoria Agentic MACRO · Luciano Santos Borges</p>
-    <p class="footer-text" style="margin-top:8px; font-size:11px;">Transformando IA em vantagem operacional.</p>
+    <p class="footer-text">Transformando IA em vantagem operacional.</p>
     <div class="footer-links">
       <a href="macro.pdf" download>↓ Baixar o e-book do Método MACRO (PDF)</a>
       <a href="privacidade.html">Política de Privacidade</a>
