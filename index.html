@@ -1,226 +1,1456 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- ─── Consent Mode v2 — deve rodar antes do GTM ─── -->
+  <script>
+    globalThis.dataLayer = globalThis.dataLayer || [];
+    globalThis.gtag = function () { dataLayer.push(arguments); };
+    gtag('consent', 'default', {
+      analytics_storage:    'denied',
+      ad_storage:           'denied',
+      ad_user_data:         'denied',
+      ad_personalization:   'denied',
+      wait_for_update:      500
+    });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+      var firstScript = d.getElementsByTagName(s)[0];
+      var gtmScript = d.createElement(s);
+      var dataLayerParam = l === 'dataLayer' ? '' : '&l=' + l;
+      gtmScript.async = true;
+      gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dataLayerParam;
+      firstScript.parentNode.insertBefore(gtmScript, firstScript);
+    })(globalThis, document, 'script', 'dataLayer', 'GTM-WP7DNHHG');
+  </script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Política de Privacidade — Mentoria Agentic MACRO</title>
+  <title>Mentoria Agentic MACRO — Transforme IA em Vantagem Operacional</title>
+
+  <!-- ─── Open Graph / Social Sharing ─── -->
+  <meta property="og:type"         content="website" />
+  <meta property="og:url"          content="https://lusabo.github.io/ia-vantagem-operacional/" />
+  <meta property="og:title"        content="Mentoria Agentic MACRO — Transforme IA em Vantagem Operacional" />
+  <meta property="og:description"  content="Aprenda a transformar IA em vantagem operacional real com o Método MACRO. 8 encontros, 4 semanas, 1 Blueprint aplicado ao seu fluxo de trabalho." />
+  <meta property="og:image"        content="https://lusabo.github.io/ia-vantagem-operacional/capa.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale"       content="pt_BR" />
+  <!-- Twitter Card (lido também pelo LinkedIn) -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Mentoria Agentic MACRO — Transforme IA em Vantagem Operacional" />
+  <meta name="twitter:description" content="Aprenda a transformar IA em vantagem operacional real com o Método MACRO. 8 encontros, 4 semanas, 1 Blueprint aplicado ao seu fluxo de trabalho." />
+  <meta name="twitter:image"       content="https://lusabo.github.io/ia-vantagem-operacional/capa.png" />
+  <meta name="description"         content="Você usa IA, mas ainda não consegue provar onde ela ajuda? Em 45 minutos analisamos onde a IA pode virar ganho operacional real no seu fluxo de trabalho." />
+  <link rel="canonical"            href="https://lusabo.github.io/ia-vantagem-operacional/" />
+  <link rel="icon"                 type="image/png" href="macro-logo.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
+    /* ─── RESET & BASE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --black: #0a0a0a;
-      --dark: #111111;
-      --card: #161616;
-      --border: #242424;
-      --muted: #888888;
-      --light: #b4b4b4;
-      --white: #ffffff;
-      --blue: #0095E5;
-      --cyan: #00C4D4;
-      --grad: linear-gradient(135deg, #0095E5 0%, #00C4D4 100%);
+      --black:   #0a0a0a;
+      --dark:    #111111;
+      --card:    #161616;
+      --border:  #242424;
+      --muted:   #888888;
+      --light:   #999999;
+      --white:   #ffffff;
+      --blue:    #0095E5;
+      --cyan:    #00C4D4;
+      --green:   #22C55E;
+      --orange:  #F5A623;
+      --yellow:  #FFD600;
+      --grad: linear-gradient(135deg, #0095E5 0%, #00C4D4 30%, #22C55E 55%, #F5A623 80%, #FF6B00 100%);
     }
-
-    * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
       background: var(--black);
       color: var(--white);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.7;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
 
-    a {
-      color: var(--white);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .wrap {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 72px 24px 96px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--cyan);
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(32px, 5vw, 48px);
-      line-height: 1.1;
-      margin: 0 0 18px;
-    }
-
-    .sub {
-      max-width: 760px;
-      color: var(--light);
-      margin-bottom: 36px;
-    }
-
-    .top-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      margin-bottom: 42px;
-    }
-
-    .top-links a {
-      color: var(--muted);
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px;
-      margin-bottom: 18px;
-    }
-
-    h2 {
-      font-size: 20px;
-      margin: 0 0 12px;
-    }
-
-    p, li {
-      font-size: 15px;
-      color: var(--light);
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .note {
-      border-left: 3px solid var(--blue);
-      padding-left: 16px;
-      color: var(--light);
-      margin-top: 10px;
-    }
-    .card p + p,
-    .card ul + p { margin-top: 14px; }
-
+    /* ─── UTILITIES ─── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
     .grad-text {
       background: var(--grad);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      color: var(--light);
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--light);
+      max-width: 640px;
+      line-height: 1.7;
+    }
+    .divider {
+      width: 48px; height: 3px;
+      background: var(--grad);
+      border-radius: 2px;
+      margin-bottom: 24px;
+    }
+
+    /* ─── GLOW ─── */
+    .glow-blue  { box-shadow: 0 0 40px rgba(0,149,229,0.15); }
+    .glow-cyan  { box-shadow: 0 0 40px rgba(0,196,212,0.15); }
+    .glow-green { box-shadow: 0 0 40px rgba(34,197,94,0.15);  }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-logo { height: 36px; width: auto; }
+    .btn-nav {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--grad);
+      color: var(--black);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 22px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: opacity .2s, transform .2s;
+      letter-spacing: 0.02em;
+    }
+    .btn-nav:hover { opacity: .88; transform: translateY(-1px); }
+    .nav-links { display: flex; gap: 32px; align-items: center; flex: 1; justify-content: center; }
+    .nav-link { font-size: 13px; font-weight: 500; color: var(--light); transition: color .2s; letter-spacing: 0.02em; }
+    .nav-link:hover { color: var(--white); }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 60% 40%, rgba(0,149,229,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 70%, rgba(245,166,35,0.06) 0%, transparent 70%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 18px;
+    }
+    .hero-title {
+      font-size: clamp(36px, 5vw, 62px);
+      font-weight: 900;
+      line-height: 1.08;
+      margin-bottom: 24px;
+    }
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--light);
+      line-height: 1.7;
+      margin-bottom: 22px;
+      max-width: 520px;
+    }
+    .hero-cta-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--grad);
+      color: var(--black);
+      font-weight: 800;
+      font-size: 15px;
+      padding: 16px 32px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: opacity .2s, transform .2s;
+      letter-spacing: 0.01em;
+    }
+    .btn-primary:hover { opacity: .88; transform: translateY(-2px); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: var(--light);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 16px 24px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-secondary:hover { border-color: var(--muted); color: var(--white); }
+    .hero-image-wrap {
+      position: relative;
+      display: flex; justify-content: center; align-items: center;
+    }
+    .hero-image-bg {
+      position: absolute; inset: -20px;
+      background: radial-gradient(ellipse, rgba(0,149,229,0.12) 0%, transparent 70%);
+    }
+    .hero-image {
+      width: 100%;
+      max-width: 440px;
+      border-radius: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-stats {
+      display: flex; gap: 0; margin-top: 44px; flex-wrap: wrap;
+    }
+    .stat-item { display: flex; flex-direction: column; gap: 4px; padding: 0 28px; }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item + .stat-item { border-left: 1px solid var(--border); }
+    .stat-num { font-size: 38px; font-weight: 800; }
+    .stat-label { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+    .hero-support {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      max-width: 560px;
+      margin-bottom: 34px;
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.02);
+    }
+    .hero-support strong { color: var(--white); }
+    .hero-support p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    .hero-support-mark {
+      width: 10px;
+      height: 10px;
+      margin-top: 7px;
+      border-radius: 999px;
+      flex-shrink: 0;
+      background: var(--cyan);
+      box-shadow: 0 0 16px rgba(0,196,212,0.35);
+    }
+
+    /* ─── AUTHORITY STRIP ─── */
+    #authority-strip { padding: 0 0 24px; }
+    .auth-strip {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 22px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)), var(--card);
+    }
+    .auth-strip-photo {
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+    }
+    .auth-strip-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .auth-strip-info { flex: 1; min-width: 0; }
+    .auth-strip-name { font-size: 14px; color: var(--white); margin: 0; }
+    .auth-strip-name strong { font-weight: 600; }
+    .auth-strip-role { font-size: 13px; color: var(--light); margin: 4px 0 0; line-height: 1.5; }
+    .auth-strip-link {
+      font-size: 13px;
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 500;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .auth-strip-link:hover { color: var(--blue); }
+
+    @media (max-width: 880px) {
+      .auth-strip { flex-wrap: wrap; border-radius: 18px; padding: 16px; }
+      .auth-strip-link { width: 100%; text-align: left; }
+    }
+
+    /* ─── PROOF ─── */
+    #proof { padding: 56px 0 88px; }
+    .proof-shell {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 34px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%),
+        var(--card);
+    }
+    .proof-head {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 32px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+    .proof-note {
+      font-size: 14px;
+      color: var(--light);
+      line-height: 1.7;
+      padding: 20px 22px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.02);
+    }
+    .proof-note strong { color: var(--white); }
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .proof-card {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .proof-kicker {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 12px;
+    }
+    .proof-card h3 {
+      font-size: 18px;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .proof-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ─── PAIN ─── */
+    #pain {
+      padding: 100px 0;
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .pain-header { text-align: center; margin-bottom: 60px; }
+    .pain-header .section-sub { margin: 0 auto; }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .pain-card {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      transition: border-color .2s;
+    }
+    .pain-card:hover { border-color: #333; }
+    .pain-icon {
+      font-size: 24px;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .pain-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+    .pain-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* ─── ABOUT ─── */
+    #about {
+      padding: 80px 0;
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .about-layout {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-photo-frame {
+      position: relative;
+      border-radius: 18px;
+      padding: 2px;
+      background: var(--grad);
+    }
+    .about-photo {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+    }
+    .about-creds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .about-cred {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--light);
+      letter-spacing: 0.04em;
+    }
+    .about-quote {
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 700;
+      line-height: 1.45;
+      color: var(--white);
+      border-left: 3px solid var(--blue);
+      padding-left: 20px;
+      margin: 28px 0;
+      font-style: italic;
+    }
+    .about-text {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .about-text + .about-text { margin-top: 16px; }
+    .about-role {
+      font-size: 13px;
+      color: var(--cyan);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+    }
+
+    /* ─── METHOD ─── */
+    #method { padding: 100px 0; }
+    .method-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .method-image {
+      max-width: 440px;
+      border-radius: 16px;
+    }
+    .method-pillars { display: flex; flex-direction: column; gap: 20px; margin-top: 40px; }
+    .pillar {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--card);
+      transition: border-color .2s, transform .2s;
+    }
+    .pillar:hover { transform: translateX(4px); }
+    .pillar-letter {
+      font-size: 22px;
+      font-weight: 900;
+      min-width: 36px;
+      text-align: center;
+      line-height: 1;
+      padding-top: 2px;
+    }
+    .pillar-letter.m { color: var(--blue); }
+    .pillar-letter.a { color: var(--cyan); }
+    .pillar-letter.c { color: var(--green); }
+    .pillar-letter.r { color: var(--orange); }
+    .pillar-letter.o { color: var(--yellow); }
+    .pillar.pm:hover { border-color: var(--blue); }
+    .pillar.pa:hover { border-color: var(--cyan); }
+    .pillar.pc:hover { border-color: var(--green); }
+    .pillar.pr:hover { border-color: var(--orange); }
+    .pillar.po:hover { border-color: var(--yellow); }
+    .pillar-name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
+    .pillar-desc { font-size: 13px; color: var(--muted); }
+    .pillar.pm .pillar-name { color: var(--blue); }
+    .pillar.pa .pillar-name { color: var(--cyan); }
+    .pillar.pc .pillar-name { color: var(--green); }
+    .pillar.pr .pillar-name { color: var(--orange); }
+    .pillar.po .pillar-name { color: var(--yellow); }
+
+    /* ─── TRANSFORMATION ─── */
+    #transform {
+      padding: 100px 0;
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .transform-header { text-align: center; margin-bottom: 60px; }
+    .transform-header .section-sub { margin: 0 auto; }
+    .transform-table-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    thead th {
+      padding: 14px 20px;
+      text-align: left;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    thead th:first-child { color: var(--muted); border-bottom: 2px solid var(--border); }
+    thead th:last-child  { color: var(--cyan);  border-bottom: 2px solid var(--cyan); }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background .15s; }
+    tbody tr:hover { background: rgba(255,255,255,0.02); }
+    tbody td { padding: 14px 20px; }
+    tbody td:first-child { color: var(--muted); font-size: 14px; }
+    tbody td:last-child  { color: var(--white); font-size: 14px; font-weight: 500; }
+    .td-arrow { color: var(--border); text-align: center; width: 40px; }
+
+    /* ─── DELIVERABLES ─── */
+    #deliverables { padding: 100px 0; }
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 52px;
+    }
+    .del-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      transition: border-color .2s, transform .2s;
+    }
+    .del-card:hover { transform: translateY(-4px); }
+    .del-card.blue   { border-top: 3px solid var(--blue);   }
+    .del-card.cyan   { border-top: 3px solid var(--cyan);   }
+    .del-card.green  { border-top: 3px solid var(--green);  }
+    .del-card.orange { border-top: 3px solid var(--orange); }
+    .del-card.blue:hover   { border-color: var(--blue);   }
+    .del-card.cyan:hover   { border-color: var(--cyan);   }
+    .del-card.green:hover  { border-color: var(--green);  }
+    .del-card.orange:hover { border-color: var(--orange); }
+    .del-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+    .del-card p  { font-size: 14px; color: var(--muted); margin-bottom: 18px; line-height: 1.6; }
+    .del-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .del-list li { font-size: 14px; color: var(--light); display: flex; align-items: flex-start; gap: 8px; }
+    .del-list li::before { content: "→"; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .del-card.blue  .del-list li::before { color: var(--blue); }
+    .del-card.cyan  .del-list li::before { color: var(--cyan); }
+    .del-card.green .del-list li::before { color: var(--green); }
+    .del-card.orange .del-list li::before { color: var(--orange); }
+
+    /* ─── WHY 1:1 ─── */
+    #why-one {
+      padding: 80px 0;
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .why-header { text-align: center; margin-bottom: 52px; }
+    .why-header .section-sub { margin: 0 auto; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .why-card {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+    }
+    .why-card h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .why-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .why-close {
+      text-align: center;
+      color: var(--light);
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 760px;
+      margin: 28px auto 0;
+    }
+
+    /* ─── JOURNEY ─── */
+    #journey {
+      padding: 100px 0;
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .journey-header { text-align: center; margin-bottom: 60px; }
+    .journey-header .section-sub { margin: 0 auto; }
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .journey-card {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      transition: border-color .2s;
+    }
+    .journey-card:hover { border-color: #333; }
+    .journey-num {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+    }
+    .journey-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+    .journey-output { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .journey-card.phase-1 { border-left: 3px solid var(--blue); }
+    .journey-card.phase-2 { border-left: 3px solid var(--cyan); }
+    .journey-card.phase-3 { border-left: 3px solid var(--green); }
+    .journey-card.phase-4 { border-left: 3px solid var(--orange); }
+    .journey-card.phase-1 .journey-num { color: var(--blue); }
+    .journey-card.phase-2 .journey-num { color: var(--cyan); }
+    .journey-card.phase-3 .journey-num { color: var(--green); }
+    .journey-card.phase-4 .journey-num { color: var(--orange); }
+
+    /* ─── FOR WHOM ─── */
+    #audience { padding: 80px 0; }
+    .audience-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+      margin-top: 52px;
+    }
+    .audience-block h3 { font-size: 16px; font-weight: 700; margin-bottom: 18px; }
+    .audience-block.yes h3 { color: var(--green); }
+    .audience-block.no  h3 { color: var(--muted); }
+    .audience-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .audience-list li { font-size: 15px; color: var(--light); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+    .check { color: var(--green); font-weight: 900; flex-shrink: 0; }
+    .cross { color: var(--muted); font-weight: 900; flex-shrink: 0; }
+
+    /* ─── FAQ ─── */
+    #faq {
+      padding: 100px 0;
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-header { text-align: center; margin-bottom: 60px; }
+    .faq-grid { display: flex; flex-direction: column; gap: 8px; max-width: 760px; margin: 0 auto; }
+    details {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color .2s;
+    }
+    details[open] { border-color: #333; }
+    summary {
+      cursor: pointer;
+      padding: 20px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px;
+      list-style: none;
+      user-select: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      font-size: 20px;
+      color: var(--muted);
+      flex-shrink: 0;
+      transition: transform .2s;
+    }
+    details[open] summary::after { content: "−"; }
+    .faq-answer { padding: 0 24px 20px; font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    /* ─── LEAD FORM ─── */
+    #lead {
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .lead-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,149,229,0.07) 0%, transparent 70%);
+    }
+    .lead-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative; z-index: 1;
+    }
+    .lead-inner .section-title { margin-bottom: 14px; }
+    .lead-inner .section-sub  { margin: 0 auto 40px; }
+    .lead-decision-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 0 0 34px;
+      text-align: left;
+    }
+    .lead-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .lead-card h3 {
+      font-size: 15px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .lead-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .lead-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .lead-list li {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .lead-list li::before {
+      content: "•";
+      color: var(--cyan);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .lead-privacy-note {
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 18px auto 0;
+      line-height: 1.6;
+    }
+    .lead-privacy-note a {
+      color: var(--white);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .form-wrap {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: left;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 7px; color: var(--light); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      padding: 13px 16px;
+      transition: border-color .2s;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--blue); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-group select option { background: #1a1a1a; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-submit {
+      width: 100%;
+      background: var(--grad);
+      color: var(--black);
+      font-weight: 800;
+      font-size: 16px;
+      padding: 16px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: opacity .2s, transform .2s;
+      margin-top: 8px;
+      letter-spacing: 0.01em;
+    }
+    .form-submit:hover { opacity: .88; transform: translateY(-2px); }
+    .form-note { text-align: center; font-size: 12px; color: var(--muted); margin-top: 14px; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 48px 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .footer-logo { height: 28px; width: auto; margin: 0 auto 16px; }
+    .footer-text { font-size: 13px; color: var(--muted); }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .footer-links a {
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color .2s;
+    }
+    .footer-links a:hover,
+    .footer-links a:focus { color: var(--white); }
+    .footer-text + .footer-text { margin-top: 8px; font-size: 11px; }
+    .mobile-sticky-cta { display: none; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero-grid    { grid-template-columns: 1fr; }
+      .hero-image-wrap { display: none; }
+      .nav-links { display: none; }
+      .proof-head { grid-template-columns: 1fr; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .about-layout { grid-template-columns: 1fr; gap: 48px; }
+      .about-photo-frame { max-width: 260px; }
+      .method-layout { grid-template-columns: 1fr; gap: 48px; }
+      .deliverables-grid { grid-template-columns: 1fr; }
+      .lead-decision-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .journey-grid { grid-template-columns: repeat(2, 1fr); }
+      .audience-layout { grid-template-columns: 1fr; gap: 40px; }
+      #pain, #method, #transform, #deliverables, #faq, #lead, #journey { padding: 64px 0; }
+      #about, #why-one, #audience { padding: 56px 0; }
+      #proof { padding: 32px 0 56px; }
+      .pain-header, .transform-header, .why-header, .faq-header, .journey-header { margin-bottom: 40px; }
+      .deliverables-grid.del-3col { grid-template-columns: 1fr; }
+      .conversa-steps { grid-template-columns: 1fr; }
+      .conversa-arrow { display: none; }
+      .about-compact { grid-template-columns: 1fr; gap: 40px; }
+      .about-compact-photo .about-photo-frame { max-width: 200px; }
+      .mobile-sticky-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        z-index: 120;
+        padding: 14px 18px;
+        border-radius: 12px;
+        background: var(--grad);
+        color: var(--black);
+        font-size: 14px;
+        font-weight: 800;
+        box-shadow: 0 14px 34px rgba(0,0,0,0.35);
+      }
+    }
+    @media (max-width: 560px) {
+      .journey-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-wrap { padding: 28px 20px; }
+      .proof-shell { padding: 24px 20px; }
+      .hero-stats { flex-direction: column; gap: 16px; }
+      .stat-item { padding: 0; }
+      .stat-item + .stat-item { border-left: none; border-top: 1px solid var(--border); padding-top: 16px; }
+    }
+
+    /* ─── SCARCITY / EXCLUSIVITY ─── */
+    .exclusivity-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+    .exclusivity-line strong { color: var(--white); font-weight: 700; }
+    .exclusivity-dot { color: var(--orange); font-size: 9px; flex-shrink: 0; }
+    .scarcity-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(245,166,35,0.07);
+      border: 1px solid rgba(245,166,35,0.22);
+      border-radius: 10px;
+      padding: 11px 22px;
+      font-size: 14px;
+      color: var(--light);
+      margin-bottom: 32px;
+    }
+    .scarcity-badge strong { color: var(--orange); font-weight: 700; }
+    .scarcity-badge .exclusivity-dot { font-size: 11px; }
+
+    /* ─── SCROLL ANIMATION ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── FOCUS VISIBLE ─── */
+    .btn-primary:focus-visible,
+    .btn-secondary:focus-visible,
+    .btn-nav:focus-visible,
+    .btn-consent-accept:focus-visible,
+    .btn-consent-reject:focus-visible,
+    .form-submit:focus-visible,
+    summary:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+    /* ─── LAYOUT HELPERS ─── */
+    .section-center { text-align: center; margin-bottom: 52px; }
+    .section-center .section-sub { margin: 0 auto; }
+    .mb-section { margin-bottom: 52px; }
+    .transform-cta { text-align: center; margin-top: 60px; }
+    .transform-cta-text { font-size: 16px; color: var(--light); margin-bottom: 24px; }
+    .hero-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+    .hero-bullets li { font-size: 15px; color: var(--light); display: flex; align-items: center; gap: 10px; }
+    .hero-bullets li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; }
+    .method-intro { list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-direction: column; gap: 10px; }
+    .method-intro li { font-size: 15px; color: var(--light); display: flex; align-items: center; gap: 10px; }
+    .method-intro li::before { content: "✓"; color: var(--cyan); font-weight: 700; flex-shrink: 0; }
+    .pain-close { text-align: center; margin-top: 52px; padding: 32px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); }
+    .pain-close p { font-size: clamp(18px, 2.5vw, 22px); font-weight: 700; color: var(--white); line-height: 1.55; }
+    .deliverables-grid.del-3col { grid-template-columns: repeat(3, 1fr); }
+    .about-compact { display: grid; grid-template-columns: 260px 1fr; gap: 60px; align-items: center; }
+    .about-compact-photo .about-photo-frame { max-width: 260px; }
+    #conversa { padding: 100px 0; }
+    .conversa-steps { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 24px; align-items: start; margin-top: 60px; }
+    .conversa-step { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 36px; }
+    .conversa-num { font-size: 11px; font-weight: 700; color: var(--blue); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+    .conversa-step h3 { font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+    .conversa-step p { font-size: 15px; color: var(--light); line-height: 1.65; }
+    .conversa-arrow { font-size: 20px; color: var(--muted); padding-top: 40px; align-self: start; }
+
+    /* ─── CONSENT BANNER ─── */
+    #consent-banner {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 200;
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.45);
+    }
+    #consent-banner.hidden { display: none; }
+    .consent-text {
+      flex: 1;
+      min-width: 240px;
+      font-size: 13px;
+      color: var(--light);
+      line-height: 1.6;
+    }
+    .consent-text a { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }
+    .consent-actions { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+    .btn-consent-accept {
+      display: inline-flex; align-items: center;
+      background: var(--grad); color: var(--black);
+      font-weight: 700; font-size: 13px;
+      padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer;
+      transition: opacity .2s;
+    }
+    .btn-consent-accept:hover { opacity: .88; }
+    .btn-consent-reject {
+      display: inline-flex; align-items: center;
+      background: transparent; color: var(--muted);
+      font-size: 13px; font-weight: 600;
+      padding: 10px 16px; border-radius: 8px;
+      border: 1px solid var(--border); cursor: pointer;
+      transition: color .2s, border-color .2s;
+    }
+    .btn-consent-reject:hover { color: var(--white); border-color: var(--muted); }
+    body.consent-pending .mobile-sticky-cta { display: none !important; }
   </style>
 </head>
 <body>
-    
-  <main class="wrap">
-    <span class="eyebrow">Transparência e privacidade</span>
-    <h1>Política de <span class="grad-text">Privacidade</span></h1>
-    <p class="sub">Esta página explica como os dados são tratados na landing page da Mentoria Agentic MACRO e durante o agendamento da conversa estratégica. Esta política aplica-se a visitantes do Brasil (LGPD — Lei 13.709/2018) e da União Europeia, incluindo Portugal (RGPD — Regulamento UE 2016/679). O objetivo é informar de forma clara quais dados podem ser tratados, para quais finalidades, com quais terceiros e como exercer os seus direitos.</p>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe title="Google Tag Manager"
+src="https://www.googletagmanager.com/ns.html?id=GTM-WP7DNHHG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-    <div class="top-links">
-      <a href="index.html">Voltar para a landing page</a>
+<!-- ═══════════ CONSENT BANNER ═══════════ -->
+<div id="consent-banner" role="dialog" aria-label="Preferências de privacidade" aria-live="polite">
+  <p class="consent-text">
+    Esta página usa cookies analíticos (Google Analytics 4) para medir desempenho e origem do tráfego.
+    Se estiver na União Europeia — incluindo Portugal —, é necessária a sua autorização prévia.
+    <a href="privacidade.html">Política de Privacidade</a>
+  </p>
+  <div class="consent-actions">
+    <button class="btn-consent-accept" id="consent-accept">Aceitar análise</button>
+    <button class="btn-consent-reject" id="consent-reject">Recusar</button>
+  </div>
+</div>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav aria-label="Principal">
+  <div class="nav-inner">
+    <img src="macro-logo.png" alt="Método MACRO" class="nav-logo" width="1536" height="1024" />
+    <div class="nav-links"></div>
+    <a href="#lead" class="btn-nav">Agendar conversa</a>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- ═══════════ HERO ═══════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Diagnóstico gratuito · 45 minutos · 1:1</p>
+        <h1 class="hero-title">
+          Você usa <span class="grad-text">IA</span>.<br>
+          Mas ainda não consegue provar onde ela ajuda.
+        </h1>
+        <p class="hero-sub">
+          Em 45 minutos, analisamos juntos onde a IA pode parar de ser enfeite e começar a virar ganho operacional no seu fluxo real.
+        </p>
+        <div class="hero-cta-row">
+          <a href="#lead" class="btn-primary">Agendar a conversa gratuita</a>
+        </div>
+        <p class="exclusivity-line">
+          <span class="exclusivity-dot">●</span>
+          Atendimento exclusivo 1:1
+        </p>
+      </div>
+      <div class="hero-image-wrap">
+        <div class="hero-image-bg"></div>
+        <img src="capa.png" alt="Mentoria Agentic MACRO — Transformando IA em Vantagem Operacional" class="hero-image" width="1054" height="1492" />
+      </div>
     </div>
+  </div>
+</section>
 
-    <section class="card">
-      <h2>1. Quem controla os dados</h2>
-      <p>O tratamento dos dados relacionados à Mentoria Agentic MACRO é realizado por Luciano Santos Borges, responsável pela oferta, pela conversa estratégica e pelo contato posterior quando houver interesse legítimo do titular em avaliar a mentoria.</p>
-      <p class="note">Para solicitações relacionadas a privacidade, direitos do titular ou exclusão de informações, utilize o mesmo canal profissional usado no agendamento da conversa estratégica.</p>
-    </section>
+<!-- ═══════════ PAIN ═══════════ -->
+<section id="pain">
+  <div class="container">
+    <div class="pain-header reveal">
+      <span class="tag">O problema</span>
+      <h2 class="section-title">Você usa IA. Mas ainda não opera com ela.</h2>
+      <p class="section-sub">
+        Existe uma diferença entre conversar com IA e ter IA funcionando no seu fluxo de trabalho.
+      </p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <span class="pain-icon">⚡</span>
+        <h3>Você consegue resultados bons hoje e ruins amanhã</h3>
+        <p>Sem consistência e sem contexto reutilizável — cada resultado depende de quanto você se lembra do que funcionou da última vez.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-icon">🌫️</span>
+        <h3>A IA trabalha sem enxergar o cenário completo</h3>
+        <p>Decisões em reuniões, regras em mensagens, exemplos na cabeça do especialista. A IA opera no escuro e o resultado mostra isso.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-icon">📊</span>
+        <h3>Você sente ganho, mas não consegue provar resultado</h3>
+        <p>Sem baseline e sem métricas, qualquer melhoria vira opinião. Impossível justificar investimento ou escalar o que funcionou.</p>
+      </div>
+    </div>
+    <div class="pain-close reveal">
+      <p>O problema normalmente não é IA.<br>É tentar encaixar IA em processos que nunca foram desenhados para ela.</p>
+    </div>
+  </div>
+</section>
 
-    <section class="card">
-      <h2>2. Quais dados podem ser tratados</h2>
-      <ul>
-        <li>Dados informados diretamente no agendamento, como nome, e-mail, cargo, contexto profissional e respostas às perguntas de qualificação.</li>
-        <li>Dados de navegação mínimos, como página acessada, origem da visita, parâmetros UTM, profundidade de scroll e interações com CTAs, FAQ, download do PDF e widget do Calendly.</li>
-        <li>Identificadores técnicos locais, como um identificador de sessão salvo no navegador para entender a jornada da visita sem depender de uma conta autenticada.</li>
-        <li>Dados de medição e performance processados via Google Tag Manager (container GTM-WP7DNHHG) e Google Analytics 4 (medição G-9RRBD26TSD).</li>
-      </ul>
-    </section>
+<!-- ═══════════ CONVERSA ═══════════ -->
+<section id="conversa">
+  <div class="container">
+    <div class="reveal section-center">
+      <span class="tag">Em 45 minutos</span>
+      <h2 class="section-title">O que acontece na conversa</h2>
+      <p class="section-sub">Sem apresentação de slides.<br>Uma análise direta do seu caso.</p>
+    </div>
+    <div class="conversa-steps">
+      <div class="conversa-step reveal">
+        <div class="conversa-num">01</div>
+        <h3>Você traz</h3>
+        <p>Seu contexto atual, como você usa IA hoje, e o principal gargalo que quer resolver.</p>
+      </div>
+      <div class="conversa-arrow">→</div>
+      <div class="conversa-step reveal">
+        <div class="conversa-num">02</div>
+        <h3>A gente analisa</h3>
+        <p>Onde existe desperdício real, qual seria o menor passo possível com IA, e o que ainda deve ficar sob decisão humana.</p>
+      </div>
+      <div class="conversa-arrow">→</div>
+      <div class="conversa-step reveal">
+        <div class="conversa-num">03</div>
+        <h3>Você leva</h3>
+        <p>Clareza sobre onde atacar primeiro, um critério de priorização e a visão do próximo passo real para o seu caso.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="card">
-      <h2>3. Para quais finalidades os dados são usados</h2>
-      <ul>
-        <li>Viabilizar o agendamento e a realização da conversa estratégica.</li>
-        <li>Entender o contexto do potencial cliente antes da conversa.</li>
-        <li>Avaliar se a mentoria é aderente ao caso apresentado.</li>
-        <li>Medir o desempenho da landing page, identificar fricções de conversão e melhorar a experiência de navegação.</li>
-        <li>Manter contato posterior quando esse contato estiver relacionado ao interesse manifestado pelo próprio titular.</li>
-        <li>Acompanhar fontes de tráfego, comportamento de navegação e eventos de conversão ligados ao agendamento da conversa estratégica.</li>
-      </ul>
-    </section>
+<!-- ═══════════ ABOUT ═══════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-compact reveal">
+      <div class="about-compact-photo">
+        <div class="about-photo-frame">
+          <img src="foto.png" alt="Luciano Santos Borges" class="about-photo" loading="lazy" width="1122" height="1402" />
+        </div>
+      </div>
+      <div class="about-compact-content">
+        <span class="tag">Quem conduz a conversa</span>
+        <h2 class="section-title">Luciano <span class="grad-text">Borges</span></h2>
+        <div class="about-creds">
+          <span class="about-cred">20+ anos em tecnologia</span>
+          <span class="about-cred">Product Owner</span>
+          <span class="about-cred">Especialização em IA</span>
+          <span class="about-cred">Criador do Método MACRO</span>
+        </div>
+        <blockquote class="about-quote">
+          &ldquo;IA não resolve processos ruins.<br>Ela acelera seus efeitos.&rdquo;
+        </blockquote>
+        <a href="#lead" class="btn-primary">Agendar a conversa gratuita</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="card">
-      <h2>4. Bases legais consideradas</h2>
-      <p><strong>Brasil (LGPD):</strong></p>
-      <ul>
-        <li>Procedimentos preliminares relacionados à possível contratação, a pedido do titular (art. 7.º, V da LGPD).</li>
-        <li>Legítimo interesse para medir a efetividade da página e aprimorar a experiência de captação (art. 7.º, IX da LGPD).</li>
-        <li>Cumprimento de obrigações legais, quando aplicável.</li>
-      </ul>
-      <p><strong>União Europeia / Portugal (RGPD):</strong></p>
-      <ul>
-        <li>Execução de diligências pré-contratuais a pedido do titular (art. 6.º, 1, b) do RGPD), para os dados do agendamento.</li>
-        <li><strong>Consentimento do titular</strong> (art. 6.º, 1, a) do RGPD), para cookies analíticos (Google Analytics 4). Este consentimento pode ser retirado a qualquer momento através do banner de cookies presente na página.</li>
-        <li>Cumprimento de obrigações legais, quando aplicável (art. 6.º, 1, c) do RGPD).</li>
-      </ul>
-    </section>
+<!-- ═══════════ LEAD FORM ═══════════ -->
+<section id="lead">
+  <div class="lead-bg"></div>
+  <div class="container">
+    <div class="lead-inner">
+      <div class="reveal">
+        <span class="tag">Próximo passo</span>
+        <h2 class="section-title">Agende uma conversa de <span class="grad-text">45 minutos</span></h2>
+        <p class="section-sub">
+          Uma análise direta do seu caso — e clareza sobre onde a IA pode começar a gerar ganho real no seu fluxo de trabalho.
+        </p>
+      </div>
+      <div class="scarcity-badge reveal">
+        <span class="exclusivity-dot">●</span>
+        Atendimento exclusivo 1:1
+      </div>
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget reveal"
+           data-url="https://calendly.com/lucianosantosborges/conversa-estrategica?background_color=111111&text_color=ffffff&primary_color=0095E5"
+           style="min-width:320px; height:1300px; border-radius:16px; overflow:hidden;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- Calendly inline widget end -->
+      <p class="lead-privacy-note reveal">Ao agendar, você compartilha seus dados com Luciano Santos Borges e com o Calendly para viabilizar a marcação, o contato posterior e a avaliação de aderência da mentoria. Esta página pode usar cookies analíticos (Google Analytics 4) para medir desempenho — somente se você autorizou nos cookies. Você pode alterar sua preferência a qualquer momento. Leia a <a href="privacidade.html">Política de Privacidade</a>.</p>
+    </div>
+  </div>
+</section>
 
-    <section class="card">
-      <h2>5. Com quem os dados podem ser compartilhados</h2>
-      <ul>
-        <li><strong>Calendly</strong>, para disponibilizar o agendamento da conversa estratégica e coletar as informações do booking form.</li>
-        <li><strong>Provedores técnicos da página</strong>, como infraestrutura de hospedagem e entrega de conteúdo.</li>
-        <li><strong>Serviços técnicos externos carregados pelo site</strong>, como Google Fonts e o próprio script do Calendly, que podem receber dados técnicos necessários ao carregamento da página.</li>
-        <li><strong>Google Tag Manager</strong>, utilizado para gerenciar o disparo e a organização das tags de mensuração da página.</li>
-        <li><strong>Google Analytics 4</strong>, utilizado para mensurar visitas, origem de tráfego, navegação e eventos relacionados à captação.</li>
-      </ul>
-      <p class="note">Atualmente, a página utiliza o container GTM-WP7DNHHG no Google Tag Manager e a medição G-9RRBD26TSD no Google Analytics 4 para organizar e analisar eventos de navegação e conversão.</p>
-      <p class="note"><strong>Transferências internacionais de dados:</strong> O Google LLC (Google Tag Manager e Google Analytics 4) está sediado nos Estados Unidos. As transferências de dados pessoais de titulares da União Europeia para os EUA são realizadas com base nas Cláusulas Contratuais Padrão (Standard Contractual Clauses — SCCs) aprovadas pela Comissão Europeia, nos termos do art. 46.º do RGPD.</p>
-    </section>
+</main>
 
-    <section class="card">
-      <h2>6. Retenção</h2>
-      <p>Os dados de agendamento e contato podem ser mantidos pelo tempo necessário para conduzir a conversa estratégica, realizar eventual follow-up relacionado à mentoria e documentar a operação comercial — em regra, enquanto houver interesse legítimo ativo ou até solicitação de eliminação pelo titular. Dados de navegação e eventos são mantidos em formato técnico ou agregado conforme os períodos padrão da plataforma utilizada (o Google Analytics 4 retém dados de eventos por até 14 meses por padrão) e podem ser eliminados antecipadamente a pedido do titular.</p>
-    </section>
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="container">
+    <img src="macro-logo.png" alt="Método MACRO" class="footer-logo" width="1536" height="1024" />
+    <p class="footer-text">Mentoria Agentic MACRO · Luciano Santos Borges</p>
+    <p class="footer-text">Transformando IA em vantagem operacional.</p>
+    <div class="footer-links">
+      <a href="privacidade.html">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
 
-    <section class="card">
-      <h2>7. Direitos do titular</h2>
-      <p><strong>Brasil (LGPD):</strong> O titular pode solicitar confirmação da existência de tratamento, acesso, correção, anonimização, bloqueio, eliminação, portabilidade, informação sobre compartilhamento e revisão de decisões automatizadas quando aplicável. Tem também o direito de apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD).</p>
-      <p><strong>União Europeia / Portugal (RGPD):</strong> O titular tem direito de acesso, retificação, apagamento (“direito ao esquecimento”), limitação do tratamento, portabilidade, oposição e, quando o tratamento se baseie em consentimento, o direito de retirar esse consentimento a qualquer momento sem prejuízo da licitude do tratamento efetuado antes da retirada. Tem também o direito de apresentar reclamação à autoridade de controlo competente (em Portugal: Comissão Nacional de Proteção de Dados — CNPD).</p>
-      <p>Para exercer qualquer um destes direitos, utilize o canal de contacto profissional disponibilizado no agendamento da conversa estratégica.</p>
-    </section>
+<a href="#lead" class="mobile-sticky-cta">Conversar sobre meu caso</a>
 
-    <section class="card">
-      <h2>8. Cookies e consentimento</h2>
-      <p>Esta página utiliza cookies analíticos para medir desempenho, origem do tráfego e interações com elementos da página, por meio do Google Analytics 4 gerido via Google Tag Manager.</p>
-      <ul>
-        <li><strong>Primeira visita:</strong> é apresentado um banner de cookies. O Google Analytics 4 só ativa a recolha de dados após autorização explícita.</li>
-        <li><strong>Aceitar:</strong> os cookies analíticos são ativados e a preferência é guardada no navegador.</li>
-        <li><strong>Recusar:</strong> nenhum cookie analítico é ativado. A página continua a funcionar normalmente.</li>
-        <li><strong>Alterar a preferência:</strong> limpe os dados do site no seu navegador para que o banner volte a aparecer.</li>
-      </ul>
-      <p class="note">A implementação utiliza o Google Consent Mode v2, que sinaliza o estado de consentimento ao Google Tag Manager e ao Google Analytics 4 antes de qualquer recolha de dados.</p>
-    </section>
+<script>
+  /* ── Scroll reveal ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    <section class="card">
-      <h2>9. Observações importantes</h2>
-      <ul>
-        <li>Esta landing page não foi desenhada para receber dados sensíveis.</li>
-        <li>Use o campo de agendamento apenas para informações necessárias à conversa estratégica.</li>
-        <li>Se você não quiser compartilhar seus dados pelo Calendly, não conclua o agendamento pelo widget.</li>
-      </ul>
-    </section>
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    <section class="card">
-      <h2>10. Atualização desta política</h2>
-      <p>Última atualização: 24 de maio de 2026.</p>
-    </section>
-  </main>
+  /* ── Consent Management ── */
+  (function () {
+    var CONSENT_KEY = 'macro_consent_v1';
+    var banner = document.getElementById('consent-banner');
+    var stored = localStorage.getItem(CONSENT_KEY);
+
+    function applyConsent(granted) {
+      gtag('consent', 'update', {
+        analytics_storage: granted ? 'granted' : 'denied'
+      });
+      localStorage.setItem(CONSENT_KEY, granted ? 'granted' : 'denied');
+      if (banner) banner.classList.add('hidden');
+      document.body.classList.remove('consent-pending');
+    }
+
+    if (stored === 'granted') {
+      applyConsent(true);
+    } else if (stored === 'denied') {
+      if (banner) banner.classList.add('hidden');
+    } else {
+      document.body.classList.add('consent-pending');
+    }
+
+    if (banner) {
+      document.getElementById('consent-accept').addEventListener('click', function () { applyConsent(true); });
+      document.getElementById('consent-reject').addEventListener('click', function () { applyConsent(false); });
+    }
+  }());
+
+  /* ── Analytics-ready event layer ── */
+  globalThis.dataLayer = globalThis.dataLayer || [];
+
+  const STORAGE_KEYS = {
+    session: 'macro_session_id_v1',
+    attribution: 'macro_attribution_v1'
+  };
+
+  const getOrCreateSessionId = () => {
+    const existing = localStorage.getItem(STORAGE_KEYS.session);
+    if (existing) return existing;
+
+    const generated = globalThis.crypto && globalThis.crypto.randomUUID
+      ? globalThis.crypto.randomUUID()
+      : `session_${Date.now()}_${Math.random().toString(16).slice(2)}`;
+
+    localStorage.setItem(STORAGE_KEYS.session, generated);
+    return generated;
+  };
+
+  const readStoredAttribution = () => {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEYS.attribution) || '{}');
+    } catch {
+      return {};
+    }
+  };
+
+  const persistAttribution = () => {
+    const params = new URLSearchParams(globalThis.location.search);
+    const current = {
+      utm_source: params.get('utm_source') || '',
+      utm_medium: params.get('utm_medium') || '',
+      utm_campaign: params.get('utm_campaign') || '',
+      utm_content: params.get('utm_content') || '',
+      utm_term: params.get('utm_term') || '',
+      referrer: document.referrer || '',
+      landing_path: globalThis.location.pathname,
+      landing_url: globalThis.location.href,
+      first_seen_at: new Date().toISOString()
+    };
+
+    const stored = readStoredAttribution();
+    const hasIncomingAttribution = Object.values(current).some(Boolean);
+    const finalAttribution = hasIncomingAttribution
+      ? { ...stored, ...current, first_seen_at: stored.first_seen_at || current.first_seen_at }
+      : stored;
+
+    localStorage.setItem(STORAGE_KEYS.attribution, JSON.stringify(finalAttribution));
+    return finalAttribution;
+  };
+
+  const sessionId = getOrCreateSessionId();
+  const attribution = persistAttribution();
+
+  const pushAnalytics = (eventName, payload = {}) => {
+    const eventPayload = {
+      event: eventName,
+      event_name: eventName,
+      page_path: globalThis.location.pathname,
+      page_title: document.title,
+      session_id: sessionId,
+      timestamp: new Date().toISOString(),
+      ...attribution,
+      ...payload
+    };
+
+    globalThis.dataLayer.push(eventPayload);
+
+    if (typeof globalThis.gtag === 'function') {
+      globalThis.gtag('event', eventName, eventPayload);
+    }
+
+    if (typeof globalThis.plausible === 'function') {
+      globalThis.plausible(eventName, { props: eventPayload });
+    }
+
+    globalThis.dispatchEvent(new CustomEvent('macro:analytics', { detail: eventPayload }));
+  };
+
+  globalThis.macroAnalytics = {
+    sessionId,
+    attribution,
+    push: pushAnalytics
+  };
+
+  const getElementLocation = (element) => {
+    const section = element.closest('section');
+    if (section && section.id) return section.id;
+    if (element.closest('nav')) return 'nav';
+    if (element.closest('footer')) return 'footer';
+    return 'document';
+  };
+
+  pushAnalytics('page_view', {
+    viewport: `${window.innerWidth}x${window.innerHeight}`
+  });
+
+  document.querySelectorAll('a.btn-nav, a.btn-primary, a.btn-secondary, a.mobile-sticky-cta').forEach((element) => {
+    element.addEventListener('click', () => {
+      pushAnalytics('cta_click', {
+        cta_text: element.textContent.trim(),
+        cta_href: element.getAttribute('href') || '',
+        cta_location: getElementLocation(element)
+      });
+    });
+  });
+
+  document.querySelectorAll('a[href="macro.pdf"]').forEach((element) => {
+    element.addEventListener('click', () => {
+      pushAnalytics('pdf_download_click', {
+        asset: 'macro.pdf',
+        click_location: getElementLocation(element)
+      });
+    });
+  });
+
+  document.querySelectorAll('#faq details').forEach((detail) => {
+    detail.addEventListener('toggle', () => {
+      if (detail.open) {
+        pushAnalytics('faq_open', {
+          faq_question: (detail.querySelector('summary') || {}).textContent?.trim() || ''
+        });
+      }
+    });
+  });
+
+  const scrollMilestones = [25, 50, 75, 90];
+  const firedScrollMilestones = new Set();
+
+  const handleScrollTracking = () => {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (scrollableHeight <= 0) return;
+
+    const percent = Math.round((window.scrollY / scrollableHeight) * 100);
+
+    scrollMilestones.forEach((milestone) => {
+      if (percent >= milestone && !firedScrollMilestones.has(milestone)) {
+        firedScrollMilestones.add(milestone);
+        pushAnalytics('scroll_depth', { scroll_percent: milestone });
+      }
+    });
+  };
+
+  globalThis.addEventListener('scroll', handleScrollTracking, { passive: true });
+  handleScrollTracking();
+
+  const calendlyWidget = document.querySelector('.calendly-inline-widget');
+  if (calendlyWidget) {
+    const calendlyObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          pushAnalytics('calendly_widget_view', { widget_location: 'lead' });
+          calendlyObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.35 });
+
+    calendlyObserver.observe(calendlyWidget);
+  }
+
+  globalThis.addEventListener('message', (event) => {
+    if (!String(event.origin || '').includes('calendly.com')) return;
+
+    const calendlyEvent = event.data && event.data.event;
+    if (typeof calendlyEvent !== 'string' || !calendlyEvent.startsWith('calendly.')) return;
+
+    pushAnalytics('calendly_event', {
+      calendly_event: calendlyEvent
+    });
+
+    if (calendlyEvent === 'calendly.event_scheduled') {
+      pushAnalytics('calendly_booked', {
+        calendly_event: calendlyEvent
+      });
+    }
+  });
+
+
+</script>
 </body>
 </html>
